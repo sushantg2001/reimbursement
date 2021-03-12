@@ -11,8 +11,8 @@ function Navigation()
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav mr-auto">
-                            <a className="nav-link active first-nav" aria-current="page" href="#">HOME</a>
-                            <a className="nav-link active" href="#">PAST REIMBUREMENTS</a>
+                            <a className="nav-link active first-nav" aria-current="page" href="/home">HOME</a>
+                            <a className="nav-link active" href="/past-reimbursements">PAST REIMBURSEMENTS</a>
                             <a className="nav-link active" href="#">LOGOUT</a>
                         </div>
                     </div>
