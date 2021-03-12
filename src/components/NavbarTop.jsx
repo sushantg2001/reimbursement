@@ -7,7 +7,7 @@ function NavbarTop()
             <div className="container pt-2">
                 <div className="row">
                     <div className="col-md-6 col-sm-12 ml-0 pl-0">
-                        <img src="./assets/navbarImg.png" className="navbar-img"></img>
+                        <img src="https://www.iiitd.ac.in/sites/default/files/images/logo/style3colorlarge.jpg" className="navbar-img" alt="IIITD"></img>
                     </div>
                     <div className="col-md-6 col-sm-12 ">
                         <div className="ml-auto-social social-buttons-links">

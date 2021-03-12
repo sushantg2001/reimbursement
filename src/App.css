@@ -1,12 +1,21 @@
 .blue-color{
   color:#3FADA8;
 }
+.light-gray-color{
+  color: #808080;
+}
+.middle{
+  text-align: center;
+}
 nav{
   background-color:#3FADA8 ;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 80%;
 
+}
+.fw-700{
+  font-weight: 700;
 }
 /* Home Page */
 @media only screen and (max-width: 992px){
@@ -35,8 +44,22 @@ nav{
     margin-bottom: 10px;
   }
 }
-.homePageContent{
+.homePageContent, span{
   font-family: 'Open Sans', sans-serif;
 }
 
+/* History */
+.historyAmount{
+  color:#000;
+}
+.historyStatus{
+  float:right;
+}
 
+/* Footer */
+.bg-footer{
+  background-color: #eeeeee;
+}
+.footerText{
+  font-size: 80%;
+}
