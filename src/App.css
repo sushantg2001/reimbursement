@@ -17,6 +17,9 @@ nav{
 .fw-700{
   font-weight: 700;
 }
+.fw-500{
+  font-weight: 500;
+}
 /* Home Page */
 @media only screen and (max-width: 992px){
   .navbar-img{

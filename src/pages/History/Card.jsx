@@ -23,7 +23,7 @@ function Card(props)
             <div className="card border-secondary">
                 <div className="card-body">
                     <h5 className="card-title blue-color">{props.purpose}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><span className="historyAmount">{"₹ "+props.amount}</span> <span className="historyStatus" style={colorStyle}>{props.status}</span></h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><span className="historyAmount fw-700">{"₹ "+props.amount}</span> <span className="historyStatus fw-700" style={colorStyle}>{props.status}</span></h6>
                     <p className="card-text">{props.description}</p>
                 </div>
             </div>
