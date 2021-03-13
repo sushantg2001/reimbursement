@@ -13,7 +13,7 @@ function Navigation()
                         <div className="navbar-nav mr-auto">
                             <a className="nav-link active first-nav" aria-current="page" href="/home">HOME</a>
                             <a className="nav-link active" href="/past-reimbursements">PAST REIMBURSEMENTS</a>
-                            <a className="nav-link active" href="#">LOGOUT</a>
+                            <a className="nav-link active" href="/">LOGOUT</a>
                         </div>
                     </div>
                 </div>

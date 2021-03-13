@@ -76,3 +76,12 @@ nav{
   font-size: 80%;
   color:#fff;
 }
+/* Login */
+.campus-bg{
+  height:100vh;
+  width:100vw;
+  background-color: #eee;
+}
+.loginFooter{
+  background-color: #eee;
+}
