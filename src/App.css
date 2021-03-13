@@ -7,6 +7,9 @@
 .middle{
   text-align: center;
 }
+.white{
+  color:#fff;
+}
 nav{
   background-color:#3FADA8 ;
   font-family: 'Open Sans', sans-serif;
@@ -50,7 +53,13 @@ nav{
 .homePageContent, span{
   font-family: 'Open Sans', sans-serif;
 }
-
+.formStyle{
+  color: #e6001d;
+  font-size: 70%;
+}
+.homeContainer{
+  padding-bottom: 120px;
+}
 /* History */
 .historyAmount{
   color:#000;
@@ -61,8 +70,9 @@ nav{
 
 /* Footer */
 .bg-footer{
-  background-color: #eeeeee;
+  background-color:#3FADA8;
 }
 .footerText{
   font-size: 80%;
+  color:#fff;
 }

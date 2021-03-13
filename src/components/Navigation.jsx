@@ -4,7 +4,7 @@ function Navigation()
 {
     return (
         <>
-            <nav className="navbar navbar-expand-md navbar-dark">
+            <nav className="navbar navbar-expand-md navbar-dark p-0 m-0">
                 <div className="container-fluid">
                     <button className="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
