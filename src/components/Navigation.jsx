@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom';
 
 function Navigation()
 {
@@ -10,11 +11,13 @@ function Navigation()
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav mr-auto">
-                            <a className="nav-link active first-nav" aria-current="page" href="/home">HOME</a>
-                            <a className="nav-link active" href="/past-reimbursements">PAST REIMBURSEMENTS</a>
-                            <a className="nav-link active" href="/">LOGOUT</a>
-                        </div>
+                        <div className="navbar-nav mr-auto ml-3">
+                            <div className="nav-link first-nav ml-2 first-nav" aria-current="page">
+                                <Link className="m-auto text-center white" to="/">HOME</Link></div>
+                            <div className="nav-link first-nav ml-2" >
+                                <Link className="m-auto text-center white" to="/past-reimbursements">PAST REIMBURSEMENTS</Link></div>  
+                            <div className="nav-link first-nav ml-2" >
+                                <Link className="m-auto text-center white" to="/login">LOGOUT</Link></div>                          </div>
                     </div>
                 </div>
             </nav>

@@ -4,7 +4,7 @@ function NavbarTop()
 {
     return(
         <>
-            <div className="container pt-2">
+            <div className="container-fluid pt-2 pl-5 pr-5">
                 <div className="row">
                     <div className="col-md-6 col-sm-12 ml-0 pl-0">
                         <img src="https://www.iiitd.ac.in/sites/default/files/images/logo/style3colorlarge.jpg" className="navbar-img" alt="IIITD"></img>
