@@ -1,6 +1,6 @@
 import React from "react"
 
-function HomeContent()
+function RequestContent()
 {
     return (   
         <>
@@ -13,8 +13,6 @@ function HomeContent()
                     <div class="col-md-6 col-sm-12">
                     <label for="Name" className="formStyle m-0">Name*</label>
                     <input type="text" class="form-control mb-2" />
-                    <label for="amount" className="formStyle m-0">Amount Required*</label>
-                    <input type="number" class="form-control mb-2" />
                     <label for="purpose" className="formStyle m-0">Purpose*</label>
                     <select id="purpose" name="purpose" className="form-control mb-2">
                         <option value="opt1">Option 1</option>
@@ -25,7 +23,7 @@ function HomeContent()
                     </div>
                     <div class="col-md-6 col-sm-12">
                     <label for="description" class="form-label formStyle m-0">Description*</label>
-                    <textarea class="form-control mb-2" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control mb-2" id="exampleFormControlTextarea1" rows="4"></textarea>
                     <button type="submit" class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4"  style={{backgroundColor:"#3FADA8", borderRadius:"30px"}}><span className="fw-700 white" style={{fontSize:"80%"}}>SUBMIT</span></button>
                     </div>
                 </div>
@@ -35,4 +33,4 @@ function HomeContent()
 )
 }
 
-export default HomeContent;
+export default RequestContent;

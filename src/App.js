@@ -3,6 +3,7 @@ import Login from "./pages/Login/login"
 import Home from "./pages/Home/home"
 import History from "./pages/History/history"
 import Reimbursements from "./pages/History/Reimbursements"
+import Request from "./pages/Request/Request"
 import { HashRouter, Route, Switch} from 'react-router-dom'
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/all-reimbursements">
             <Reimbursements />
+          </Route>
+          <Route path="/request">
+            <Request />
           </Route>
           <Route path="/login">
             <Login />

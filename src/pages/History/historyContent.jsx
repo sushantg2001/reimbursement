@@ -45,13 +45,41 @@ const records = [
         amount: "4000",
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Pending"
+    },
+    {
+        index :7,
+        purpose: "Purpose 7",
+        amount: "5200",
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+        status:"Approved"
+    },
+    {
+        index :8,
+        purpose: "Purpose 8",
+        amount: "3200",
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+        status:"Approved"
+    },
+    {
+        index :9,
+        purpose: "Purpose 9",
+        amount: "7200",
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+        status:"Approved"
+    },
+    {
+        index :10,
+        purpose: "Purpose 10",
+        amount: "200",
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+        status:"Approved"
     }
 ] 
 function FullHistoryContent()
 {
     return (   
         <>
-        <div className="container pb-5">
+        <div className="container mb-5">
             <p className="homePageContent pt-4 pb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
             </p>

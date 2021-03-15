@@ -17,6 +17,8 @@ function Navigation()
                             <div className="nav-link first-nav ml-2" >
                                 <Link className="m-auto text-center white" to="/past-reimbursements">PAST REIMBURSEMENTS</Link></div>  
                             <div className="nav-link first-nav ml-2" >
+                                <Link className="m-auto text-center white" to="/request">REQUEST ACCESS</Link></div> 
+                            <div className="nav-link first-nav ml-2" >
                                 <Link className="m-auto text-center white" to="/login">LOGOUT</Link></div>                          </div>
                     </div>
                 </div>
