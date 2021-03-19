@@ -67,6 +67,16 @@ nav{
 }
 .loginFooter{
   background-color: #eee;
+
+}
+.loginFooterText{
+  color:#0D47A1;
+  font-size: 70%;
+  padding: 0 40px;
+}
+.loginfooterCopy{
+  font-size: 80%;
+  color:#4d4d4d;
 }
 @media only screen and (max-width: 992px){
   .navbar-img{
