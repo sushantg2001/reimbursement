@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
 function Navigation()
 {
@@ -13,13 +13,13 @@ function Navigation()
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav mr-auto ml-3">
                             <div className="nav-link first-nav ml-2 first-nav" aria-current="page">
-                                <Link className="m-auto text-center white" to="/">HOME</Link></div>
-                            <div className="nav-link first-nav ml-2" >
-                                <Link className="m-auto text-center white" to="/past-reimbursements">PAST REIMBURSEMENTS</Link></div>  
-                            <div className="nav-link first-nav ml-2" >
-                                <Link className="m-auto text-center white" to="/request">REQUEST ACCESS</Link></div> 
-                            <div className="nav-link first-nav ml-2" >
-                                <Link className="m-auto text-center white" to="/login">LOGOUT</Link></div>                          </div>
+                                <NavLink className="m-auto text-center white links" activeClassName="activeLinks" to="/home">HOME</NavLink></div>
+                            <div className="nav-link first-nav ml-2 " >
+                                <NavLink className="m-auto text-center white links" activeClassName="activeLinks" to="/past-reimbursements">PAST REIMBURSEMENTS</NavLink></div>  
+                            <div className="nav-link first-nav ml-2 " >
+                                <NavLink className="m-auto text-center white links" activeClassName="activeLinks"  to="/request">REQUEST ACCESS</NavLink></div> 
+                            <div className="nav-link first-nav ml-2 " >
+                                <NavLink exact={true} className="m-auto text-center white links" activeClassName="activeLinks"  to="/">LOGOUT</NavLink></div>                          </div>
                     </div>
                 </div>
             </nav>

@@ -13,7 +13,7 @@ function App() {
       <HashRouter basename="/">
         <ScrollToTop/>
         <Switch>
-          <Route exact path="/" >
+          <Route path="/home" >
               <Home />
           </Route>
           <Route path="/past-reimbursements">
@@ -25,7 +25,7 @@ function App() {
           <Route path="/request">
             <Request />
           </Route>
-          <Route path="/login">
+          <Route exact path="/">
             <Login />
           </Route>
         </Switch>
