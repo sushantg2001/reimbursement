@@ -12,24 +12,35 @@ function HomeContent()
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                     <label for="Name" className="formStyle m-0">Name*</label>
-                    <input type="text" class="form-control mb-2" />
+                    <input type="text" class="form-control mb-2" required/>
                     <label for="amount" className="formStyle m-0">Amount Required*</label>
-                    <input type="number" class="form-control mb-2" />
+                    <input type="number" class="form-control mb-2" required />
                     <label for="purpose" className="formStyle m-0">Purpose*</label>
-                    <select id="purpose" name="purpose" className="form-control mb-2">
-                        <option value="opt1">Option 1</option>
-                        <option value="opt2">Option 2</option>
-                        <option value="opt3">Option 3</option>
-                        <option value="opt4">Option 4</option>
+                    <select id="purpose" name="purpose" className="form-control mb-2" required>
+                        <option value="opt1" disabled={false}>Option 1</option>
+                        <option value="opt2" disabled={true}>Option 2</option>
+                        <option value="opt3" disabled={true}>Option 3</option>
+                        <option value="opt4" disabled={false}>Option 4</option>
                     </select>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                    <label for="description" class="form-label formStyle m-0">Description*</label>
-                    <textarea class="form-control mb-2" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    <button type="submit" class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4"  style={{backgroundColor:"#3FADA8", borderRadius:"30px"}}><span className="fw-700 white" style={{fontSize:"80%"}}>SUBMIT</span></button>
+                        <label for="description" class="form-label formStyle m-0">Description*</label>
+                        <textarea required class="form-control mb-2" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        <div class="m-0 mb-2 p-0 ">
+                            <label for="formFileMultiple" class="form-label formStyle m-0 p-0">Upload cancelled cheque</label>
+                            <input class="form-control p-0 m-0" type="file" id="formFileMultiple" multiple />
+                        </div>
+                        <button type="submit" class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4"  style={{backgroundColor:"#3FADA8", borderRadius:"30px"}}><span className="fw-700 white" style={{fontSize:"80%"}}>SUBMIT</span></button>
+
                     </div>
+
                 </div>
                 </form>
+                <div className="pt-4" >
+                    <em>      <strong style={{textDecoration:"underline"}}>Note:</strong> All the original copies of the documents should be submitted to the Office of Student Affairs.</em> 
+
+
+                </div>
         </div>
         </>
 )
