@@ -8,8 +8,10 @@ function History()
 {
     return (
         <>
-            <Navbar />
-            <HistoryContent />
+            <div className="wrapper">
+                <Navbar />
+                <HistoryContent />
+            </div>
             <Footer />
         </>
     );

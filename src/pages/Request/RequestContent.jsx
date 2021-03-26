@@ -4,8 +4,8 @@ function RequestContent()
 {
     return (   
         <>
-        <div className="container  homeContainer mb-5">
-            <p className="homePageContent pt-4 pb-4">
+        <div className="container  homeContainer ">
+            <p className="homePageContent pt-4 ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
             </p>
             <form> 

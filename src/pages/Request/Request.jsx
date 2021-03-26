@@ -6,8 +6,11 @@ import RequestContent from "./RequestContent"
 function Request()
 {
     return (<>
-        <Navbar />
-        <RequestContent />
+        <div className="wrapper">
+            <Navbar />
+            <RequestContent />
+        </div>
+
         <Footer />
     </>);
 }

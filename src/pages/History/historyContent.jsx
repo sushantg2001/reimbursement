@@ -79,7 +79,7 @@ function HistoryContent()
     const recordsFinal = records.reverse();
     return (   
         <>
-        <div className="container pb-5">
+        <div className="container pb-4 mb-5 ">
             <p className="homePageContent pt-4 pb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
             </p>
