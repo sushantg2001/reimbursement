@@ -8,70 +8,100 @@ const records = [
         purpose: "Purpose 1",
         amount: 1500,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed"
+        status:"Completed",
+        id: "ID#1234",
+        date: "12-12-12",
+        processed: "12-12-12"
     },
     {
         index:2,
         purpose: "Purpose 2",
         amount: 1700,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Rejected"
+        status:"Rejected",
+        id: "ID#1235",
+        date: "12-12-12",
+        processed: ""
     },
     {
         index: 3,
         purpose: "Purpose 3",
         amount: 5000,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Pending"
+        status:"Pending",
+        id: "ID#1236",
+        date: "12-12-12",
+        processed: ""
     },
     {
         index :4,
         purpose: "Purpose 4",
         amount: 1000,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Pending"
+        status:"Pending",
+        id: "ID#1237",
+        date: "12-12-12",
+        processed: ""
     },
     {
         index :5,
         purpose: "Purpose 5",
         amount: 1200,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed"
+        status:"Completed",
+        id: "ID#1238",
+        date: "12-12-12",
+        processed: ""
     },
     {
         index :6,
         purpose: "Purpose 6",
         amount: 4000,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Pending"
+        status:"Pending",
+        id: "ID#1239",
+        date: "12-12-12",
+        processed: ""
     },
     {
         index :7,
         purpose: "Purpose 7",
         amount: 5200,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed"
+        status:"Completed",
+        id: "ID#1240",
+        date: "12-12-12",
+        processed: "12-12-12"
     },
     {
         index :8,
         purpose: "Purpose 8",
         amount: 3200,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed"
+        status:"Completed",
+        id: "ID#1241",
+        date: "12-12-12",
+        processed: "12-12-12"
     },
     {
         index :9,
         purpose: "Purpose 9",
         amount: 7200,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed"
+        status:"Completed",
+        id: "ID#1242",
+        date: "12-12-12",
+        processed: "12-12-12"
     },
     {
         index :10,
         purpose: "Purpose 10",
         amount: 200,
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed"
+        status:"Completed",
+        id: "ID#1243",
+        date: "12-12-12",
+        processed: "12-12-12"
     }
 ] 
 function HistoryContent()
@@ -110,7 +140,15 @@ function HistoryContent()
                 {
                 filteredReimbursements.map(record=>{
                     return(   
-                        <Card key={record.id} description={record.description} purpose={record.purpose} amount={record.amount} status={record.status} />
+                        <Card 
+                        key={record.id}
+                        description={record.description} 
+                        purpose={record.purpose} 
+                        amount={record.amount} 
+                        status={record.status} 
+                        id={record.id}
+                        date={record.date}
+                        processed={record.processed} />
                     );
                 })
                 }

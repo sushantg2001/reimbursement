@@ -1,11 +1,19 @@
-import React from "react"
+import React, {useState} from "react"
 
 function RequestContent()
 {
+    const [expand, setExpand] = useState(false);
+    function handleExpand()
+    {
+        setExpand(true);
+    }
     return (   
         <>
         <div className="container  homeContainer ">
-            <p className="homePageContent pt-4 ">
+            <h4 className="pt-4">
+                Submit New Access Request
+            </h4>
+            <p className="homePageContent pt-1 ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
             </p>
             <form> 
@@ -23,7 +31,11 @@ function RequestContent()
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="description" class="form-label formStyle m-0">Description*</label>
-                        <textarea required class="form-control mb-2" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        <textarea required class="form-control mb-2" id="exampleFormControlTextarea1"                         
+                        rows={expand? "4": "1" }
+                        style={{resize:"none"}}
+                        placeholder="Enter access request details"
+                        onClick={handleExpand}></textarea>
                         <button type="submit" class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4"  style={{backgroundColor:"#3FADA8", borderRadius:"30px"}}><span className="fw-700 white" style={{fontSize:"80%"}}>SUBMIT</span></button>
                     </div>
                 </div>
