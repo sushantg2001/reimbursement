@@ -106,15 +106,53 @@ const records = [
 ] 
 function HistoryContent()
 {
+    const [isChecked, setCheck] = useState(true);
+    function removeCheck()
+    {
+        setCheck(false);
+    }
+    function updateCheck()
+    {
+        setCheck(true);
+    }
     const recordsFinal = records.reverse();
     const [search, setSearch] = useState("");
     const [filteredReimbursements, setFilteredReimbursements] = useState([]);
     useEffect(() => {
-        setFilteredReimbursements(
-          recordsFinal.filter((record) =>
-            record.amount >= search
-          )
-        );
+
+        if(document.getElementById("minAmountRadio").checked)
+        {   
+            setFilteredReimbursements(
+                recordsFinal.filter((record) =>
+                record.amount >= search
+                )
+            );
+        }
+        else if(document.getElementById("maxAmountRadio").checked)
+        {   
+            setFilteredReimbursements(
+                recordsFinal.filter((record) =>
+                record.amount <= search
+                )
+            );
+        }
+        else if(document.getElementById("statusRadio").checked)
+        {   
+            setFilteredReimbursements(
+                recordsFinal.filter((record) =>
+                record.status.toLowerCase().includes(search.toLowerCase()) 
+                )
+            );
+        }
+        else if(document.getElementById("idRadio").checked)
+        {   
+            setFilteredReimbursements(
+                recordsFinal.filter((record) =>
+                record.id.toLowerCase().includes(search.toLowerCase()) 
+                )
+            );
+        }
+
       }, [search, recordsFinal]);
 
     return (   
@@ -124,7 +162,7 @@ function HistoryContent()
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
             </p>
 
-            <div class="input-group  flex-nowrap mb-4 mt-0">
+            <div class="input-group  flex-nowrap mb-2 mt-0">
                 <span class="input-group-text" id="addon-wrapping" style={{borderRadius:"0px", color:"#fff", backgroundColor:"#3FADA8"}}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 </svg></span>
@@ -135,8 +173,29 @@ function HistoryContent()
                 aria-describedby="addon-wrapping"
                 style={{borderRadius:"0px"}}
                 />
+
             </div>
-            <div className="row">
+            <div className="middle pl-2 pr-2">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="minAmountRadio" value="option1" checked={isChecked} onClick={updateCheck}/>
+                    <label class="form-check-label pl-1" for="minAmountRadio">Min Amount</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maxAmountRadio" value="option2" onClick={removeCheck}/>
+                    <label class="form-check-label pl-1" for="maxAmountRadio">Max Amount</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="statusRadio" value="option3" onClick={removeCheck}/>
+                    <label class="form-check-label pl-1" for="statusRadio">Status of Reimbursement</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="idRadio" value="option4" onClick={removeCheck}  />
+                    <label class="form-check-label pl-1" for="idRadio">Reimbursement ID</label>
+                </div>
+            </div>
+
+
+            <div className="row mt-5">
                 {
                 filteredReimbursements.map(record=>{
                     return(   

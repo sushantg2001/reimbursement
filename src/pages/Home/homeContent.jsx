@@ -47,7 +47,7 @@ function HomeContent()
                         <option value="opt3" disabled={true}>Option 3</option>
                         <option value="opt4" disabled={false}>Option 4</option>
                     </select>
-                    <label for="start" className="formStyle m-0">Date of event:*</label>
+                    <label for="start" className="formStyle m-0">Date of event*</label>
                     <input type="date" id="start" name="trip-start"
                     class="form-control mb-2 "
                         value={today}></input>
