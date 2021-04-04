@@ -4,4 +4,4 @@ To run frontend:
 
 To run backend:
 1. ```go to backend directory```
-2. python manage.py runserver
+2. ```python manage.py runserver```
