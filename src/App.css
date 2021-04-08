@@ -17,18 +17,18 @@ html, body {
 .white{
   color:#fff;
 }
-nav{
+.nav{
   background-color:#3FADA8 ;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 80%;
 
 }
-.navStyle:hover{
+/* .navStyle:hover{
   color:#000;
   text-decoration: none;
   background-color: #fff;
-}
+} */
 .black{
   color:#000;
 }
@@ -173,6 +173,11 @@ input[type='radio']:checked:after {
 }
 .activeLinks{
   color:#000;
-  background-color: #fff;
-  padding: 10px 10px;
 }
+
+/* .nav li.active a,
+.nav li a:hover,
+.nav li.active a:focus,
+.nav li.active a:hover{
+  background-color:red;
+} */
