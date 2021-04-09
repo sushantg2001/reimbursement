@@ -3,5 +3,5 @@ To run frontend:
 2. ```npm start```
 
 To run backend:
-1. ```go to backend directory```
+1. ```cd backend```
 2. ```python manage.py runserver```
