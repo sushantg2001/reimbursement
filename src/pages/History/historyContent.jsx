@@ -188,7 +188,7 @@ function HistoryContent()
                 />
 
             </div>
-            <div className="middle pl-2 pr-2 pb-3">
+            <div className="middle pl-2 pr-2 pb-3 pt-2">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="minAmountRadio" value="option1" checked={isChecked} onClick={updateCheck}/>
                     <label class="form-check-label pl-1" for="minAmountRadio">Min Amount</label>
@@ -211,7 +211,7 @@ function HistoryContent()
             </div>   
         {isMap &&
             ((recordSize>0)? <div id="RMap">
-                <Map records={records} />
+                <Map records={records.reverse()} />
             </div>: <p className="middle fw-700 pt-2" style={{fontSize:"120%"}}>Looks like you dont have any reimbursements!!</p>)}
 
             <div className="row mt-5">
