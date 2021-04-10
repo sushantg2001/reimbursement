@@ -28,7 +28,7 @@ function Map(props) {
 		labels: [...dates],
 		datasets: [
 		  {
-			label: 'Reimbursement Amount',
+			label: 'Amount',
 			fill: false,
 			lineTension: 0.5,
 			backgroundColor: '#000',

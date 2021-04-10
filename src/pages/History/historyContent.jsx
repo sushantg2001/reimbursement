@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Card from "./Card"
 import Map from "./Map"
-
+import { Link } from 'react-router-dom';
 
 const records = [
     {
@@ -107,6 +107,15 @@ const records = [
 ] 
 function HistoryContent()
 {
+    function handleMap()
+    {
+        var x = document.getElementById("RMap");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+        }
+    }
     const [isChecked, setCheck] = useState(true);
     function removeCheck()
     {
@@ -156,6 +165,7 @@ function HistoryContent()
 
       }, [search, recordsFinal]);
 
+
     return (   
         <>
         <div className="container pb-4 mb-5 ">
@@ -194,7 +204,13 @@ function HistoryContent()
                     <label class="form-check-label pl-1" for="idRadio">Reimbursement ID</label>
                 </div>
             </div>
-            <Map records={records} />
+            <div onClick={handleMap}>
+                <Link className="text-center blue-color fw-500 all-reimbursements" style={{fontSize:"110%"}}>View Reimbursement Graph</Link>
+            </div>   
+         
+            <div id="RMap">
+                <Map records={records} />
+            </div>
 
             <div className="row mt-5">
                 {
