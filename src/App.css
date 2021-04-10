@@ -173,11 +173,13 @@ input[type='radio']:checked:after {
 }
 .activeLinks{
   color:#000;
-}
+} 
 
-/* .nav li.active a,
+.nav li.active a,
 .nav li a:hover,
 .nav li.active a:focus,
-.nav li.active a:hover{
-  background-color:red;
-} */
+.nav li.active a:hover,
+.nav li.active a:active
+{
+  background-color:#fff;
+}

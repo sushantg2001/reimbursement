@@ -11,18 +11,18 @@ function Navigation()
                 </button>
                 <div className="collapse navbar-collapse p-0 m-0" id="navbarNavAltMarkup">
                     <li class="nav-item">
-                        <a class="nav-link" >
-                            <NavLink className="m-auto text-center white links" activeClassName="activeLinks" to="/home">HOME</NavLink>
+                        <a class="nav-link " aria-current="page">
+                            <NavLink className="m-auto text-center white links" activeClassName="activeLinks"   to="/home">HOME</NavLink>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ">
-                            <NavLink className="m-auto text-center white links" activeClassName="activeLinks" to="/past-reimbursements">PAST REIMBURSEMENTS</NavLink> 
+                            <NavLink className="m-auto text-center white links" activeClassName="activeLinks"   to="/past-reimbursements">PAST REIMBURSEMENTS</NavLink> 
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item activ">
                         <a class="nav-link" >
-                            <NavLink className="m-auto text-center white links" activeClassName="activeLinks"  to="/request">REQUEST ACCESS</NavLink>
+                            <NavLink className="m-auto text-center white links" activeClassName="activeLinks"    to="/request">REQUEST ACCESS</NavLink>
                         </a>
                     </li>
                     <li class="nav-item">

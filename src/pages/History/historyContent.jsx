@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Card from "./Card"
+import Map from "./Map"
 
 
 const records = [
@@ -175,7 +176,7 @@ function HistoryContent()
                 />
 
             </div>
-            <div className="middle pl-2 pr-2">
+            <div className="middle pl-2 pr-2 pb-3">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="minAmountRadio" value="option1" checked={isChecked} onClick={updateCheck}/>
                     <label class="form-check-label pl-1" for="minAmountRadio">Min Amount</label>
@@ -193,7 +194,7 @@ function HistoryContent()
                     <label class="form-check-label pl-1" for="idRadio">Reimbursement ID</label>
                 </div>
             </div>
-
+            <Map />
 
             <div className="row mt-5">
                 {
