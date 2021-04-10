@@ -11,7 +11,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Completed",
         id: "ID#1234",
-        date: "12-12-12",
+        date: "03-12-12",
         processed: "12-12-12"
     },
     {
@@ -21,7 +21,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Rejected",
         id: "ID#1235",
-        date: "12-12-12",
+        date: "04-12-12",
         processed: ""
     },
     {
@@ -31,7 +31,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Pending",
         id: "ID#1236",
-        date: "12-12-12",
+        date: "05-12-12",
         processed: ""
     },
     {
@@ -41,7 +41,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Pending",
         id: "ID#1237",
-        date: "12-12-12",
+        date: "06-12-12",
         processed: ""
     },
     {
@@ -51,7 +51,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Completed",
         id: "ID#1238",
-        date: "12-12-12",
+        date: "07-12-12",
         processed: ""
     },
     {
@@ -61,7 +61,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Pending",
         id: "ID#1239",
-        date: "12-12-12",
+        date: "08-12-12",
         processed: ""
     },
     {
@@ -71,7 +71,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Completed",
         id: "ID#1240",
-        date: "12-12-12",
+        date: "09-12-12",
         processed: "12-12-12"
     },
     {
@@ -81,7 +81,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Completed",
         id: "ID#1241",
-        date: "12-12-12",
+        date: "10-12-12",
         processed: "12-12-12"
     },
     {
@@ -91,7 +91,7 @@ const records = [
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
         status:"Completed",
         id: "ID#1242",
-        date: "12-12-12",
+        date: "11-12-12",
         processed: "12-12-12"
     },
     {
@@ -194,7 +194,7 @@ function HistoryContent()
                     <label class="form-check-label pl-1" for="idRadio">Reimbursement ID</label>
                 </div>
             </div>
-            <Map />
+            <Map records={records} />
 
             <div className="row mt-5">
                 {

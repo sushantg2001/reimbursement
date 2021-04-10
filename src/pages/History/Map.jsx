@@ -2,18 +2,39 @@ import React from 'react';
 import {Line} from 'react-chartjs-2';
 
 function Map(props) {
+	const records = props.records
+	const recordsFinal = records.reverse();
+	var dates;
+	var amount;
+
+	var past;
+	if(records.length >=10)
+	{
+		const temp = recordsFinal.slice(0, 10)
+		past = 10
+		dates = temp.map(a => a.date);
+		amount = temp.map(a=> a.amount)
+	}
+	else
+	{
+		past = records.length
+		dates = recordsFinal.map(a => a.date);
+		amount = recordsFinal.map(a=> a.amount)
+
+	}
+    
+	var head=	'Past ' +past+' reimbusements graph'
 	const state = {
-		labels: ['January', 'February', 'March',
-				 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct'],
+		labels: [...dates],
 		datasets: [
 		  {
 			label: 'Reimbursement Amount',
 			fill: false,
 			lineTension: 0.5,
-			backgroundColor: 'rgba(75,192,192,1)',
-			borderColor: 'rgba(0,0,0,1)',
+			backgroundColor: '#000',
+			borderColor: '#3FADA8',
 			borderWidth: 2,
-			data: [65, 59, 80, 81, 56, 10, 20, 13, 41, 100]
+			data: [...amount]
 		  }
 		]
 	  }
@@ -24,7 +45,7 @@ function Map(props) {
           options={{
             title:{
               display:true,
-              text:'Past 10 reimbusement graph',
+              text:head,
               fontSize:15
             },
             legend:{
