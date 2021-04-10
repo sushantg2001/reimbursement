@@ -1,14 +1,17 @@
+
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework.decorators import api_view
-from .models import payment,entity
+from .models import payment, custom_user
 
-class paymentSerializer(serializers.ModelSerializer):
+
+class payment_serializer(serializers.ModelSerializer):
     class Meta:
         model = payment
         fields = ['email', 'amount', 'description', 'status']
 
-class entitySerializer(serializers.ModelSerializer):
+
+class user_serializer(serializers.ModelSerializer):
     class meta:
-        model = entity
-        fields = ['user','club']
+        model = custom_user
+        fields = ['user', 'club', 'name']
