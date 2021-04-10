@@ -107,13 +107,15 @@ const records = [
 ] 
 function HistoryContent()
 {
+    const [isMap, setMap] = useState(false)
     function handleMap()
     {
-        var x = document.getElementById("RMap");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
+        if(isMap)
+        {
+            setMap(false);
+        }
+        else{
+            setMap(true);
         }
     }
     const [isChecked, setCheck] = useState(true);
@@ -205,12 +207,12 @@ function HistoryContent()
                 </div>
             </div>
             <div onClick={handleMap}>
-                <Link className="text-center blue-color fw-500 all-reimbursements" style={{fontSize:"110%"}}>View Reimbursement Graph</Link>
+                <Link className="text-center blue-color fw-500 all-reimbursements" style={{fontSize:"110%"}}>{isMap?  "Hide Reimbursement Graph" : "View Reimbursement Graph"}</Link>
             </div>   
-         
+        {isMap &&
             <div id="RMap">
                 <Map records={records} />
-            </div>
+            </div>}
 
             <div className="row mt-5">
                 {
