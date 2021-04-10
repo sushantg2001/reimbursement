@@ -17,18 +17,18 @@ html, body {
 .white{
   color:#fff;
 }
-nav{
+.nav{
   background-color:#3FADA8 ;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 80%;
 
 }
-.navStyle:hover{
+/* .navStyle:hover{
   color:#000;
   text-decoration: none;
   background-color: #fff;
-}
+} */
 .black{
   color:#000;
 }
@@ -74,6 +74,33 @@ nav{
 }
 .submission{
   font-size: 90%;
+}
+input[type='radio']:after {
+  width: 18px;
+  height: 18px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+  width: 18px;
+  height: 18px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #3FADA8;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }
 
 /* Footer */
@@ -146,6 +173,13 @@ nav{
 }
 .activeLinks{
   color:#000;
-  background-color: #fff;
-  padding: 10px 10px;
+} 
+
+.nav li.active a,
+.nav li a:hover,
+.nav li.active a:focus,
+.nav li.active a:hover,
+.nav li.active a:active
+{
+  background-color:#fff;
 }

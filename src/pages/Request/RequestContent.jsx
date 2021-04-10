@@ -3,9 +3,79 @@ import React, {useState} from "react"
 function RequestContent()
 {
     const [expand, setExpand] = useState(false);
+    const[isClub, setClub] = useState(false);
+
     function handleExpand()
     {
         setExpand(true);
+    }
+    const options= [
+        {
+            option:"Student",
+            isAvailable: true
+        },
+        {
+            option:"Club",
+            isAvailable:false
+        }
+    ]
+    const clubs = [
+        {
+            club:"Club1",
+            isAvailable:false
+        },
+        {
+            club:"Club2",
+            isAvailable:false
+        },
+        {
+            club:"Club3",
+            isAvailable:false
+        },
+        {
+            club:"Club4",
+            isAvailable:true
+        },
+        {
+            club:"Club5",
+            isAvailable:false
+        },
+        {
+            club:"Club6",
+            isAvailable:false
+        },
+        {
+            club:"Club7",
+            isAvailable:false
+        },
+        {
+            club:"Club8",
+            isAvailable:true
+        },
+        {
+            club:"Club9",
+            isAvailable:false
+        },
+        {
+            club:"Club10",
+            isAvailable:false
+        },
+        {
+            club:"Club11",
+            isAvailable:false
+        }
+    ]
+    function updateClub(event)
+    {
+        const val = event.target.value;
+        console.log(val);
+        if(val === "Club")
+        {
+            setClub(true);
+        }
+        else{
+            setClub(false);
+        }
     }
     return (   
         <>
@@ -22,12 +92,26 @@ function RequestContent()
                     <label for="Name" className="formStyle m-0">Name*</label>
                     <input required type="text" class="form-control mb-2" />
                     <label for="purpose" className="formStyle m-0">Purpose*</label>
-                    <select required id="purpose" name="purpose" className="form-control mb-2">
-                        <option value="opt1">Option 1</option>
-                        <option value="opt2">Option 2</option>
-                        <option value="opt3">Option 3</option>
-                        <option value="opt4">Option 4</option>
+                    <select required id="purpose" name="purpose" className="form-control mb-2" onChange={updateClub}>
+                        {
+                            options.map((option, index)=>{
+                                return(<option value={index.option} key={index} >{option.option}</option>)
+                            })
+                        }
                     </select>
+                    {
+                        isClub && 
+                            (<>
+                            <label for="clubs" className="formStyle m-0">Select Club*</label>
+                            <select id="club" name="club" className="form-control mb-2 " required >
+                                {
+                                    clubs.map((club, index)=>{
+                                        return (<option value={club.club} key={index}>{club.club}</option>);
+                                    })
+                                }
+                            </select>
+                            </>)
+                    }
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="description" class="form-label formStyle m-0">Description*</label>

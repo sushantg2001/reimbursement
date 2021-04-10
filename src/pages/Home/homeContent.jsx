@@ -3,6 +3,7 @@ import React, {useState} from "react"
 function HomeContent()
 {
     const[expand, setExpand] = useState(false);
+    const[isClub, setClub] = useState(false);
     function handleExpand()
     {
         setExpand(true);
@@ -24,6 +25,74 @@ function HomeContent()
     else{
         today = today + (d.getMonth()+1)+"-0"+ d.getDate();
     }
+    const options= [
+        {
+            option:"Student",
+            isAvailable: true
+        },
+        {
+            option:"Club",
+            isAvailable:true
+        }
+    ]
+    const clubs = [
+        {
+            club:"Club1",
+            isAvailable:false
+        },
+        {
+            club:"Club2",
+            isAvailable:false
+        },
+        {
+            club:"Club3",
+            isAvailable:false
+        },
+        {
+            club:"Club4",
+            isAvailable:true
+        },
+        {
+            club:"Club5",
+            isAvailable:false
+        },
+        {
+            club:"Club6",
+            isAvailable:false
+        },
+        {
+            club:"Club7",
+            isAvailable:false
+        },
+        {
+            club:"Club8",
+            isAvailable:true
+        },
+        {
+            club:"Club9",
+            isAvailable:false
+        },
+        {
+            club:"Club10",
+            isAvailable:false
+        },
+        {
+            club:"Club11",
+            isAvailable:false
+        }
+    ]
+    function updateClub(event)
+    {
+        const val = event.target.value;
+        console.log(val);
+        if(val === "Club")
+        {
+            setClub(true);
+        }
+        else{
+            setClub(false);
+        }
+    }
     return (   
         <>
         <div className="container  homeContainer mb-5  ">
@@ -41,18 +110,32 @@ function HomeContent()
                     <label for="amount" className="formStyle m-0">Amount Required*</label>
                     <input type="number" class="form-control mb-2 "  required />
                     <label for="purpose" className="formStyle m-0">Purpose*</label>
-                    <select id="purpose" name="purpose" className="form-control mb-2 " required >
-                        <option value="opt1" disabled={false}>Option 1</option>
-                        <option value="opt2" disabled={true}>Option 2</option>
-                        <option value="opt3" disabled={true}>Option 3</option>
-                        <option value="opt4" disabled={false}>Option 4</option>
+                    <select id="purpose" name="purpose" className="form-control mb-2 " required onChange={updateClub}>
+                        {
+                            options.map((option, index)=>{
+                                return (<option value={option.option} key={index} disabled={!option.isAvailable} >{option.option}</option>);
+                            })
+                        }
                     </select>
-                    <label for="start" className="formStyle m-0">Date of event:*</label>
-                    <input type="date" id="start" name="trip-start"
-                    class="form-control mb-2 "
-                        value={today}></input>
+                    {
+                        isClub && 
+                            (<>
+                            <label for="clubs" className="formStyle m-0">Select Club*</label>
+                            <select id="club" name="club" className="form-control mb-2 " required >
+                                {
+                                    clubs.map((club, index)=>{
+                                        return (<option value={club.club} key={index} disabled={!club.isAvailable} >{club.club}</option>);
+                                    })
+                                }
+                            </select>
+                            </>)
+                    }
                     </div>
                     <div class="col-md-6 col-sm-12">
+                        <label for="start" className="formStyle m-0">Date of event*</label>
+                        <input type="date" id="start" name="trip-start"
+                        class="form-control mb-2 "
+                            value={today}></input>
                         <label for="description" class="form-label formStyle m-0">Description*</label>
                         <textarea required class="form-control mb-2 textArea " 
                         id="exampleFormControlTextarea1" 
@@ -62,12 +145,8 @@ function HomeContent()
                         onClick={handleExpand}
                         ></textarea>
                         <div class="m-0 mb-2 p-0 ">
-                            <label for="formFileMultiple" class="form-label formStyle m-0 p-0">Upload cancelled cheque</label>
+                            <label for="formFileMultiple" class="form-label formStyle m-0 p-0">Upload documents</label>
                             <input class="form-control p-0 m-0" type="file" id="formFileMultiple" multiple />
-                        </div>
-                        <div class="m-0 mb-3 p-0 ">
-                            <label for="formFileMultipleReceipt" class="form-label formStyle m-0 p-0">Upload receipts</label>
-                            <input class="form-control p-0 m-0" type="file" id="ormFileMultipleReceipt" multiple />
                         </div>
                         <button type="submit" class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4"  style={{backgroundColor:"#3FADA8", borderRadius:"30px"}}><span className="fw-700 white" style={{fontSize:"80%"}}>SUBMIT</span></button>
 
