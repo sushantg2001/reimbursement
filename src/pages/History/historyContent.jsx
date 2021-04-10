@@ -167,7 +167,7 @@ function HistoryContent()
 
       }, [search, recordsFinal]);
 
-
+      const recordSize = records.length
     return (   
         <>
         <div className="container pb-4 mb-5 ">
@@ -210,9 +210,9 @@ function HistoryContent()
                 <Link className="text-center blue-color fw-500 all-reimbursements" style={{fontSize:"110%"}}>{isMap?  "Hide Reimbursement Graph" : "View Reimbursement Graph"}</Link>
             </div>   
         {isMap &&
-            <div id="RMap">
+            ((recordSize>0)? <div id="RMap">
                 <Map records={records} />
-            </div>}
+            </div>: <p className="middle fw-700 pt-2" style={{fontSize:"120%"}}>Looks like you dont have any reimbursements!!</p>)}
 
             <div className="row mt-5">
                 {

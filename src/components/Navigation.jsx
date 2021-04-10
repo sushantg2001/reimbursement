@@ -10,13 +10,15 @@ function Navigation()
                     <span className="navbar-toggler-icon" style={{color:"#000"}}></span>
                 </button>
                 <div className="collapse navbar-collapse p-0 m-0" id="navbarNavAltMarkup">
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link " aria-current="page">
                             <NavLink className="m-auto text-center white links" activeClassName="activeLinks"   to="/home">HOME</NavLink>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link ">
+                    <li class="nav-item ">
+                    {/* <Link to="home/lists" className={this.props.location.pathname === 'home/details' || (...) ? 'active' : 'notActive'}>Lists</Link> */}
+
+                        <a className="nav-link   ">
                             <NavLink className="m-auto text-center white links" activeClassName="activeLinks"   to="/past-reimbursements">PAST REIMBURSEMENTS</NavLink> 
                         </a>
                     </li>
