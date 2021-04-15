@@ -27,6 +27,11 @@ function Navigation()
                             <NavLink className="m-auto text-center white links" activeClassName="activeLinks"    to="/request">REQUEST ACCESS</NavLink>
                         </a>
                     </li>
+                    <li class="nav-item activ">
+                        <a class="nav-link" >
+                            <NavLink className="m-auto text-center white links" activeClassName="activeLinks"    to="/clubs">CLUBS</NavLink>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <NavLink exact={true} className="m-auto text-center white links" activeClassName="activeLinks"  to="/">LOGOUT</NavLink>                        

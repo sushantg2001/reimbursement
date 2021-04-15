@@ -3,14 +3,14 @@ import {Line} from 'react-chartjs-2';
 
 function Map(props) {
 	const records = props.records
-	const recordsFinal = records.reverse();
+	const temp = records.slice(0, 10)
+
 	var dates;
 	var amount;
 
 	var past;
 	if(records.length >=10)
 	{
-		const temp = recordsFinal.slice(0, 10)
 		past = 10
 		dates = temp.map(a => a.date);
 		amount = temp.map(a=> a.amount)
@@ -18,8 +18,8 @@ function Map(props) {
 	else
 	{
 		past = records.length
-		dates = recordsFinal.map(a => a.date);
-		amount = recordsFinal.map(a=> a.amount)
+		dates = records.map(a => a.date);
+		amount = records.map(a=> a.amount)
 
 	}
     
