@@ -1,3 +1,4 @@
+from django.urls.conf import include
 from backend.api.views import student_view_set
 from rest_framework.authtoken import views
 from django.urls import path
@@ -6,11 +7,17 @@ from rest_framework import routers
 from .views import *
 
 router = routers.DefaultRouter()
-router.register('studentapi',viewset=student_view_set,basename='student')
+router.register('studentapi', viewset=student_view_set, basename='student')
 
-router = routers.DefaultRouter()
-router.register('paymentapi', viewset=payment_view_set, basename='payment')
+router1 = routers.DefaultRouter()
+router1.register('paymentapi', viewset=payment_view_set, basename='payment')
 
+router2 = routers.DefaultRouter()
+router2.register('paymentapi', viewset=payment_view_set, basename='payment')
 urlpatterns = [
-    path('get_auth_token/', obtain_auth_token)
+    path('get_auth_token/', obtain_auth_token),
+    path('', include(router.urls)),
+    path('', include(router1.urls)),
+    path('', include(router2.urls))
+
 ]
