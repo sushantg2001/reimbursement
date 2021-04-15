@@ -4,13 +4,13 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class custom_user(models.Model):
+class student(models.Model):
     user = models.OneToOneField(
-        User, related_name='requester', on_delete=models.CASCADE)
+        User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     club_access = models.BooleanField(default=False)
     class Meta:
-        verbose_name_plural = "Entities"
+        verbose_name_plural = "Students"
         permissions = [
             ("club_access", "Accessing Club Resources")
         ]
@@ -38,7 +38,7 @@ class payment(models.Model):
 
 class club(models.Model):
     user = models.OneToOneField(
-        User, related_name='requester', on_delete=models.CASCADE)
+        User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     budget = models.PositiveIntegerField(default=0)
     class Meta:

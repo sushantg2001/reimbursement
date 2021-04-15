@@ -2,7 +2,7 @@
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework.decorators import api_view
-from .models import payment, custom_user
+from .models import club, payment, custom_user, student
 
 
 class payment_serializer(serializers.ModelSerializer):
@@ -11,7 +11,12 @@ class payment_serializer(serializers.ModelSerializer):
         fields = ['email', 'amount', 'description', 'status']
 
 
-class user_serializer(serializers.ModelSerializer):
+class student_serializer(serializers.ModelSerializer):
     class meta:
-        model = custom_user
-        fields = ['user', 'club', 'name']
+        model = student
+        fields = ['user', 'club_access', 'name']
+
+class club_serialzer(serializers.ModelSerializer):
+    class meta:
+        model = club
+        fields = ['user', 'club_access', 'name']
