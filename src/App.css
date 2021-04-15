@@ -102,6 +102,11 @@ input[type='radio']:checked:after {
   visibility: visible;
   border: 2px solid white;
 }
+.clubBudget{
+
+    float:right;
+    padding-left: 10px;
+}
 
 /* Footer */
 .bg-footer{
@@ -175,11 +180,11 @@ input[type='radio']:checked:after {
   color:#000;
 } 
 
-.nav li.active a,
+/* .nav li.active a,
 .nav li a:hover,
 .nav li.active a:focus,
 .nav li.active a:hover,
 .nav li.active a:active
 {
   background-color:#fff;
-}
+} */

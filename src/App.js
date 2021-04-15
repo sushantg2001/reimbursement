@@ -3,6 +3,7 @@ import Login from "./pages/Login/login"
 import Home from "./pages/Home/home"
 import History from "./pages/History/history"
 import Request from "./pages/Request/Request"
+import Clubs from "./pages/Clubs/Clubs"
 import { HashRouter, Route, Switch} from 'react-router-dom'
 import ScrollToTop from "./ScrollToTop"
 
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/request">
             <Request />
+          </Route>
+          <Route path="/clubs">
+            <Clubs />
           </Route>
           <Route exact path="/">
             <Login />
