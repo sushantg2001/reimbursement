@@ -4,128 +4,21 @@ import Map from "./Map"
 import { Link } from 'react-router-dom';
 import axios from "axios";
 
-function test()
-{
-    axios.get('/paymentapi')
-    .then(function (response) {
-        // handle success
-        console.log(response);
-    })
-    .catch(function (error) {
-        // handle error
-        console.log(error);
-    })
-    .then(function () {
-        // always executed
-    });
-
-
-}
-
-const records = [
-    {
-        index: 1,
-        purpose: "Purpose 1",
-        amount: 1500,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed",
-        id: "ID#1234",
-        date: "03-12-12",
-        processed: "12-12-12"
-    },
-    {
-        index:2,
-        purpose: "Purpose 2",
-        amount: 1700,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Rejected",
-        id: "ID#1235",
-        date: "04-12-12",
-        processed: ""
-    },
-    {
-        index: 3,
-        purpose: "Purpose 3",
-        amount: 5000,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Pending",
-        id: "ID#1236",
-        date: "05-12-12",
-        processed: ""
-    },
-    {
-        index :4,
-        purpose: "Purpose 4",
-        amount: 1000,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Pending",
-        id: "ID#1237",
-        date: "06-12-12",
-        processed: ""
-    },
-    {
-        index :5,
-        purpose: "Purpose 5",
-        amount: 1200,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed",
-        id: "ID#1238",
-        date: "07-12-12",
-        processed: ""
-    },
-    {
-        index :6,
-        purpose: "Purpose 6",
-        amount: 4000,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Pending",
-        id: "ID#1239",
-        date: "08-12-12",
-        processed: ""
-    },
-    {
-        index :7,
-        purpose: "Purpose 7",
-        amount: 5200,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed",
-        id: "ID#1240",
-        date: "09-12-12",
-        processed: "12-12-12"
-    },
-    {
-        index :8,
-        purpose: "Purpose 8",
-        amount: 3200,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed",
-        id: "ID#1241",
-        date: "10-12-12",
-        processed: "12-12-12"
-    },
-    {
-        index :9,
-        purpose: "Purpose 9",
-        amount: 7200,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed",
-        id: "ID#1242",
-        date: "11-12-12",
-        processed: "12-12-12"
-    },
-    {
-        index :10,
-        purpose: "Purpose 10",
-        amount: 200,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
-        status:"Completed",
-        id: "ID#1243",
-        date: "12-12-12",
-        processed: "12-12-12"
-    }
-] 
 function HistoryContent()
 {
+    const [records, setRecords]= useState([]);
+    axios.get('/paymentapi/', {
+        headers: {
+            'Authorization':`Token ${localStorage.getItem('token')}`
+        }
+        })
+    .then((res) => {
+    setRecords(res.data);
+    })
+    .catch((error) => {
+    console.error(error)
+    })
+    const recordsFinal = records.reverse();
     const [isMap, setMap] = useState(true)
     function handleMap()
     {
@@ -146,7 +39,6 @@ function HistoryContent()
     {
         setCheck(true);
     }
-    const recordsFinal = records.reverse();
     const [search, setSearch] = useState("");
     const [filteredReimbursements, setFilteredReimbursements] = useState([]);
     useEffect(() => {
@@ -189,7 +81,6 @@ function HistoryContent()
       const recordSize = records.length
     return (   
         <>
-        {console.log(test())}
         <div className="container pb-4 mb-5 ">
             <p className="homePageContent pt-4 pb-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
@@ -232,7 +123,7 @@ function HistoryContent()
   
         {isMap &&
             ((recordSize>0)? <div id="RMap">
-                <Map records={records.reverse()} />
+                <Map records={records} />
             </div>: <p className="middle fw-700 pt-2" style={{fontSize:"120%"}}>Looks like you dont have any reimbursements!!</p>)}
 
             <div onClick={handleMap}>
@@ -245,7 +136,7 @@ function HistoryContent()
                         <Card 
                         key={record.id}
                         description={record.description} 
-                        purpose={record.purpose} 
+                        purpose={record.name} 
                         amount={record.amount} 
                         status={record.status} 
                         id={record.id}
