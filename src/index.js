@@ -5,6 +5,9 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-social/bootstrap-social.css';
+import axios from "axios";
+
+axios.defaults.baseURL = 'http://127.0.0.1:8000/';
 
 ReactDOM.render(
     <App />,
