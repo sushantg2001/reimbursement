@@ -26,7 +26,7 @@ SECRET_KEY = 'ijmm!vtc(h8=_s^3u1c0$q!wdej6xv1l$)(96s4h&38xin(=j-'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
-
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
