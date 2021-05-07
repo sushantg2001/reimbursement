@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router";
+import { useHistory } from "react-router-dom";
+
 
 function LoginHeader()
 {
+    let history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     function changeEmailVal(event)
@@ -16,6 +19,7 @@ function LoginHeader()
     }
     function formSubmit(event)
     {
+
         event.preventDefault();
         console.log(email+ " ", password);
             axios.post('/get_auth_token/', {
@@ -23,16 +27,16 @@ function LoginHeader()
                 password: password
             })
             .then(function (response) {
-                // console.log("here11");
-
                 localStorage.setItem('token', response.data.token);
                 console.log(response.data.token);
+                history.push("/home");
+                console.log("hi");
+
             })
             .catch(function (error) {
                 window.location.reload();
                 console.log(error);
             });
-
 
     }
     return (
@@ -61,14 +65,9 @@ function LoginHeader()
                             <input type="password" name="password" value={password} onChange={changePassVal} class="form-control" id="exampleInputPassword1" />
                         </div>
                         <button type="submit" class="btn  p-0 pt-1 pb-1 pl-4 pr-4 btn-block"  style={{backgroundColor:"#3FADA8", borderRadius:"30px"}}><span className="fw-700 white" style={{fontSize:"80%"}}>LOGIN</span></button>
-
                     </form>
-
                 </div>
-
             </div>
-            
-
         </>
     );
 }

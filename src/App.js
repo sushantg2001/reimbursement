@@ -20,10 +20,6 @@ const checkAuth = () => {
 
   return true;
 }
-const val = checkAuth();
-console.log("has token " + val);
-
-
 const AuthRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
     checkAuth() ? (
@@ -41,20 +37,10 @@ function App() {
         <ScrollToTop/>
         <Switch>
           <AuthRoute exact path="/home" component={Home}/>
-              {/* <Home />
-          </AuthRoute> */}
           <AuthRoute exact path="/past-reimbursements" component={History} />
-            {/* <History />
-          </AuthRoute> */}
           <AuthRoute exact path="/request" component={Request} />
-            {/* <Request />
-          </AuthRoute> */}
           <AuthRoute exact path="/clubs" component ={Clubs} />
-            {/* <Clubs />
-          </AuthRoute> */}
           <Route exact path="/"  render={props => <Login {...props} />} />
-            {/* <Login />
-          </Route> */}
         </Switch>
       </HashRouter>
     </>
