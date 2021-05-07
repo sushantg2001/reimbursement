@@ -12,7 +12,7 @@ function Login()
 
                 </div>
                 <div className="col-lg-7 col-md-7 d-sm-none d-md-block d-none campus-bg mr-0 pr-0 p-0 m-0">
-                    <img src="assets/cover.png" alt="banner" className="d-flex w-100 h-100"></img>
+                    <img src="assets/cover.png" alt="banner" className="d-flex w-100 h-100 img-fluid img-container"></img>
                 </div>
 
             </div>
