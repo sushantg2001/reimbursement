@@ -21,22 +21,19 @@ function LoginHeader()
     {
 
         event.preventDefault();
-        console.log(email+ " ", password);
-            axios.post('/get_auth_token/', {
-                username: email,
-                password: password
-            })
-            .then(function (response) {
-                localStorage.setItem('token', response.data.token);
-                console.log(response.data.token);
-                history.push("/home");
-                console.log("hi");
-
-            })
-            .catch(function (error) {
-                window.location.reload();
-                console.log(error);
-            });
+        axios.post('/get_auth_token/', {
+            username: email,
+            password: password
+        })
+        .then(function (response) {
+            localStorage.setItem('token', response.data.token);
+            console.log(response.data.token);
+            history.push("/home");
+        })
+        .catch(function (error) {
+            window.location.reload();
+            console.log(error);
+        });
 
     }
     return (
