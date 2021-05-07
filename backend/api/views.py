@@ -39,5 +39,5 @@ class club_view_set(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         # clubs = club.objects.filter(user=user)
-        clubs = club.objects.all().filter(user=user)
+        clubs = club.objects.all()
         return clubs
