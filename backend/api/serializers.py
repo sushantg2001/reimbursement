@@ -8,16 +8,16 @@ from .models import club, payment, student
 class payment_serializer(serializers.ModelSerializer):
     class Meta:
         model = payment
-        fields = ['id', 'amount', 'description', 'status', 'user']
+        fields = '__all__'
 
 
 class student_serializer(serializers.ModelSerializer):
     class Meta:
         model = student
-        fields = ['id', 'user', 'club_access', 'name']
+        fields = '__all__'
 
 
 class club_serialzer(serializers.ModelSerializer):
     class Meta:
         model = club
-        fields = ['id', 'user', 'budget', 'name']
+        fields = '__all__'
