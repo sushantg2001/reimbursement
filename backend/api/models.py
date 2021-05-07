@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-club_names = [(f"c{i}", f"club{i}") for i in range(10)]
+club_names = [("empty", "empty")]+[(f"c{i}", f"club{i}") for i in range(10)]
 
 
 class student(models.Model):
@@ -11,6 +11,8 @@ class student(models.Model):
         User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     club_access = models.BooleanField(default=False)
+    club_name = models.CharField(
+        max_length=100, choices=club_names, default="empty")
 
     def __str__(self) -> str:
         return self.name
@@ -36,9 +38,9 @@ class payment(models.Model):
 
 
 class club(models.Model):
-    user = models.OneToOneField(
-        User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100, choices=club_names)
+    user = models.ManyToManyField(User)
+    name = models.CharField(
+        max_length=100, choices=club_names, default="empty")
     budget = models.PositiveIntegerField(default=0)
 
     class Meta:

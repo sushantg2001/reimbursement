@@ -4,7 +4,6 @@ from .serializers import payment_serializer, student_serializer, club_serialzer
 from .models import payment, student, club, club_names
 from rest_framework.permissions import IsAuthenticated, BasePermission
 
-
 class IsUser(BasePermission):
     def has_object_permission(self, request, view, obj):
         boolean = obj.user == request.user
