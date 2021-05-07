@@ -2,6 +2,25 @@ import React, { useState, useEffect } from "react"
 import Card from "./Card"
 import Map from "./Map"
 import { Link } from 'react-router-dom';
+import axios from "axios";
+
+function test()
+{
+    axios.get('/paymentapi')
+    .then(function (response) {
+        // handle success
+        console.log(response);
+    })
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+    .then(function () {
+        // always executed
+    });
+
+
+}
 
 const records = [
     {
@@ -170,6 +189,7 @@ function HistoryContent()
       const recordSize = records.length
     return (   
         <>
+        {console.log(test())}
         <div className="container pb-4 mb-5 ">
             <p className="homePageContent pt-4 pb-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
