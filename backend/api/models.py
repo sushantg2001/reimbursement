@@ -30,7 +30,7 @@ class payment(models.Model):
     name = models.CharField(max_length=200)
     amount = models.PositiveIntegerField()
     description = models.TextField()
-    user = models.ForeignKey(student, on_delete=models.CASCADE)
+    student = models.ForeignKey(student, on_delete=models.CASCADE)
 
     class purposes(models.TextChoices):
         club = "club"
