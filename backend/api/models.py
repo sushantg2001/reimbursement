@@ -31,7 +31,7 @@ class payment(models.Model):
     amount = models.PositiveIntegerField()
     description = models.TextField()
     student = models.ForeignKey(student, on_delete=models.CASCADE)
-
+    date = models.DateField(auto_now_add=True)
     class purposes(models.TextChoices):
         club = "club"
         student = "student"
