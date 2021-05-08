@@ -34,7 +34,10 @@ function HistoryContent()
                         })
         setRecords(recordsData)
       },[])
-    const recordsFinal = records.reverse();
+    const [recordsFinal, setRecordsFinal] = useState([]);
+    if(records.length!==0){
+        setRecordsFinal(records.reverse());
+    }
     const [isMap, setMap] = useState(true)
     function handleMap()
     {
