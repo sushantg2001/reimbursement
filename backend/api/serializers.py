@@ -11,13 +11,14 @@ class payment_serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class student_serializer(serializers.ModelSerializer):
-    class Meta:
-        model = student
-        fields = '__all__'
-
-
 class club_serialzer(serializers.ModelSerializer):
     class Meta:
         model = club
         fields = '__all__'
+
+class student_serializer(serializers.ModelSerializer):
+    club = club_serialzer(many=True, read_only=True)
+    class Meta:
+        model = student
+        fields = '__all__'
+
