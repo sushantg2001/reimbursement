@@ -1,3 +1,4 @@
+from django.http import request
 from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import payment_serializer, student_serializer, club_serialzer
@@ -10,12 +11,17 @@ class IsUser(BasePermission):
         return boolean
 
 
+class IsStudent(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        return obj.student.user == request.user
+
 class payment_view_set(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     serializer_class = payment_serializer
 
     def get_queryset(self):
-        payments = payment.objects.all()
+        current_student = student.objects.get(user=self.request.user)
+        payments = payment.objects.all().filter(student = current_student)
         return payments
 
 
