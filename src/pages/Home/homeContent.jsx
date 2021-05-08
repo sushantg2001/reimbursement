@@ -4,20 +4,6 @@ import axios from "axios"
 
 function HomeContent()
 {
-    // axios.get('/studentapi/', {
-    //     headers: {
-    //         'Authorization':`Token ${localStorage.getItem('token')}`
-    //     }
-    //     })
-    // .then((res) => {
-    // console.log(res.data);
-    // return;
-    // })
-    // .catch((error) => {
-    // console.error(error)
-    // return;
-    // })
-        // })
     const [student, setStudent] = useState([]);
     useEffect(async()=>{
         let studentData=await axios.get('/studentapi/', {
@@ -67,52 +53,6 @@ function HomeContent()
             isAvailable:true
         }
     ]
-    const clubs = [
-        {
-            club:"Club1",
-            isAvailable:false
-        },
-        {
-            club:"Club2",
-            isAvailable:false
-        },
-        {
-            club:"Club3",
-            isAvailable:false
-        },
-        {
-            club:"Club4",
-            isAvailable:true
-        },
-        {
-            club:"Club5",
-            isAvailable:false
-        },
-        {
-            club:"Club6",
-            isAvailable:false
-        },
-        {
-            club:"Club7",
-            isAvailable:false
-        },
-        {
-            club:"Club8",
-            isAvailable:true
-        },
-        {
-            club:"Club9",
-            isAvailable:false
-        },
-        {
-            club:"Club10",
-            isAvailable:false
-        },
-        {
-            club:"Club11",
-            isAvailable:false
-        }
-    ]
     function updateClub(event)
     {
         const val = event.target.value;
@@ -125,6 +65,7 @@ function HomeContent()
             setClub(false);
         }
     }
+
     return (   
         <>
         <div className="container  homeContainer mb-5  ">
@@ -155,8 +96,8 @@ function HomeContent()
                             <label for="clubs" className="formStyle m-0">Select Club*</label>
                             <select id="club" name="club" className="form-control mb-2 " required >
                                 {
-                                    clubs.map((club, index)=>{
-                                        return (<option value={club.club} key={index} disabled={!club.isAvailable} >{club.club}</option>);
+                                    (student[0].club).map((club, index)=>{
+                                        return (<option value={club.name} key={index}  >{club.name}</option>);
                                     })
                                 }
                             </select>
