@@ -21,7 +21,7 @@ class student(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    club = models.ForeignKey(club, on_delete=models.SET_NULL, null=True, blank=True)
+    club = models.ManyToManyField(club, blank=True)
     def __str__(self) -> str:
         return self.name
 
