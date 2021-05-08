@@ -1,21 +1,42 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, Component } from "react"
 import Card from "./Card"
 import axios from "axios";
 
 function ClubContent()
 {
     const [clubs, setClubs]= useState([]);
-    axios.get('/clubapi/', {
-        headers: {
-            'Authorization':`Token ${localStorage.getItem('token')}`
-        }
-        })
-    .then((res) => {
-    setClubs(res.data);
-    })
-    .catch((error) => {
-    console.error(error)
-    })
+    // function ComponentDidMount() {
+    //     React.useEffect(() => {
+            // axios.get('/clubapi/', {
+            //     headers: {
+            //         'Authorization':`Token ${localStorage.getItem('token')}`
+            //     }
+            //     })
+    //         .then((res) => {
+    //         setClubs(res.data);
+    //         })
+    //         .catch((error) => {
+    //         console.error(error);
+    //         })
+          
+    //     }, []);
+    // }
+    // ComponentDidMount();
+    useEffect(async()=>{
+      let clubsData=await axios.get('/clubapi/', {
+                    headers: {
+                        'Authorization':`Token ${localStorage.getItem('token')}`
+                    }
+                    })
+                      .then(res=>{
+                        return res.data;
+                      })
+                      .catch(err=>{
+                        console.log(err);
+                      })
+      setClubs(clubsData)
+    },[])
+    
     const [search, setSearch] = useState("");
     const [filteredClubs, setFilteredClubs] = useState([]);
     useEffect(() => {

@@ -1,7 +1,39 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
+import axios from "axios"
+
 
 function HomeContent()
 {
+    // axios.get('/studentapi/', {
+    //     headers: {
+    //         'Authorization':`Token ${localStorage.getItem('token')}`
+    //     }
+    //     })
+    // .then((res) => {
+    // console.log(res.data);
+    // return;
+    // })
+    // .catch((error) => {
+    // console.error(error)
+    // return;
+    // })
+        // })
+    const [student, setStudent] = useState([]);
+    useEffect(async()=>{
+        let studentData=await axios.get('/studentapi/', {
+                        headers: {
+                            'Authorization':`Token ${localStorage.getItem('token')}`
+                        }
+                        })
+                        .then(res=>{
+                            console.log(res.data);
+                            return res.data;
+                        })
+                        .catch(err=>{
+                            console.log(err);
+                        })
+        setStudent(studentData)
+        },[])
     const[expand, setExpand] = useState(false);
     const[isClub, setClub] = useState(false);
     function handleExpand()

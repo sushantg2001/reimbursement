@@ -7,17 +7,33 @@ import axios from "axios";
 function HistoryContent()
 {
     const [records, setRecords]= useState([]);
-    axios.get('/paymentapi/', {
-        headers: {
-            'Authorization':`Token ${localStorage.getItem('token')}`
-        }
-        })
-    .then((res) => {
-    setRecords(res.data);
-    })
-    .catch((error) => {
-    console.error(error)
-    })
+    // axios.get('/paymentapi/', {
+    //     headers: {
+    //         'Authorization':`Token ${localStorage.getItem('token')}`
+    //     }
+    //     })
+    // .then((res) => {
+    // setRecords(res.data);
+    // return;
+    // })
+    // .catch((error) => {
+    // console.error(error);
+    // return;
+    // })
+    useEffect(async()=>{
+        let recordsData=await axios.get('/paymentapi/', {
+                      headers: {
+                          'Authorization':`Token ${localStorage.getItem('token')}`
+                      }
+                      })
+                        .then(res=>{
+                          return res.data;
+                        })
+                        .catch(err=>{
+                          console.log(err);
+                        })
+        setRecords(recordsData)
+      },[])
     const recordsFinal = records.reverse();
     const [isMap, setMap] = useState(true)
     function handleMap()
