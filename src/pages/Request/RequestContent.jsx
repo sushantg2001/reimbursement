@@ -10,7 +10,7 @@ function RequestContent()
     const[isClub, setClub] = useState(false);
     const[clubs, setClubs] = useState([]);
     useEffect(async()=>{
-        let clubsData=await axios.post('/clubapi/', {
+        let clubsData=await axios.get('/clubapi/', {
                       headers: {
                           'Authorization':`Token ${localStorage.getItem('token')}`
                       }
@@ -22,7 +22,6 @@ function RequestContent()
                           console.log(err);
                         })
         setClubs(clubsData)
-        console.log(clubsData)
       },[])
     function requestSubmitted(event)
     {
@@ -34,7 +33,7 @@ function RequestContent()
             }
         })
         .then(function (response) {
-            history.push("/request");
+            history.push("/home")
         })
         .catch(function (error) {
             window.location.reload();
@@ -97,7 +96,7 @@ function RequestContent()
                             <label for="clubs" className="formStyle m-0">Select Club*</label>
                             <select id="club" name="club" className="form-control mb-2 " required >
                                 {
-                                    clubs.map((club, index)=>{
+                                    clubs.map((club)=>{
                                         return (<option value={club.name} key={club.id}>{club.name}</option>);
                                     })
                                 }

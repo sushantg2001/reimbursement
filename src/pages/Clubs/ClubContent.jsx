@@ -5,23 +5,6 @@ import axios from "axios";
 function ClubContent()
 {
     const [clubs, setClubs]= useState([]);
-    // function ComponentDidMount() {
-    //     React.useEffect(() => {
-            // axios.get('/clubapi/', {
-            //     headers: {
-            //         'Authorization':`Token ${localStorage.getItem('token')}`
-            //     }
-            //     })
-    //         .then((res) => {
-    //         setClubs(res.data);
-    //         })
-    //         .catch((error) => {
-    //         console.error(error);
-    //         })
-          
-    //     }, []);
-    // }
-    // ComponentDidMount();
     useEffect(async()=>{
       let clubsData=await axios.get('/clubapi/', {
                     headers: {
@@ -51,7 +34,6 @@ function ClubContent()
 
     return (   
         <>
-        {/* {clubs} */}
         <div className="container pb-4 mb-5 ">
             <p className="homePageContent pt-4 pb-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
