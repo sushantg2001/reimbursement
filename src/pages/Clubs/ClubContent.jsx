@@ -35,6 +35,7 @@ function ClubContent()
                         console.log(err);
                       })
       setClubs(clubsData)
+      // console.log(clubsData)
     },[])
     
     const [search, setSearch] = useState("");

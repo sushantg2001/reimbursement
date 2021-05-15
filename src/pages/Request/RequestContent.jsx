@@ -1,9 +1,47 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
+import axios from "axios"
+import { useHistory } from "react-router-dom";
+
 
 function RequestContent()
 {
+    let history = useHistory();
     const [expand, setExpand] = useState(false);
     const[isClub, setClub] = useState(false);
+    const[clubs, setClubs] = useState([]);
+    useEffect(async()=>{
+        let clubsData=await axios.post('/clubapi/', {
+                      headers: {
+                          'Authorization':`Token ${localStorage.getItem('token')}`
+                      }
+                      })
+                        .then(res=>{
+                          return res.data;
+                        })
+                        .catch(err=>{
+                          console.log(err);
+                        })
+        setClubs(clubsData)
+        console.log(clubsData)
+      },[])
+    function requestSubmitted(event)
+    {
+        event.preventDefault();
+        
+        axios.post('/studentapi/', {
+            headers: {
+                'Authorization':`Token ${localStorage.getItem('token')}`
+            }
+        })
+        .then(function (response) {
+            history.push("/request");
+        })
+        .catch(function (error) {
+            window.location.reload();
+            console.log(error);
+        });
+
+    }
 
     function handleExpand()
     {
@@ -16,52 +54,6 @@ function RequestContent()
         },
         {
             option:"Club",
-            isAvailable:false
-        }
-    ]
-    const clubs = [
-        {
-            club:"Club1",
-            isAvailable:false
-        },
-        {
-            club:"Club2",
-            isAvailable:false
-        },
-        {
-            club:"Club3",
-            isAvailable:false
-        },
-        {
-            club:"Club4",
-            isAvailable:true
-        },
-        {
-            club:"Club5",
-            isAvailable:false
-        },
-        {
-            club:"Club6",
-            isAvailable:false
-        },
-        {
-            club:"Club7",
-            isAvailable:false
-        },
-        {
-            club:"Club8",
-            isAvailable:true
-        },
-        {
-            club:"Club9",
-            isAvailable:false
-        },
-        {
-            club:"Club10",
-            isAvailable:false
-        },
-        {
-            club:"Club11",
             isAvailable:false
         }
     ]
@@ -86,7 +78,7 @@ function RequestContent()
             <p className="homePageContent pt-1 ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
             </p>
-            <form> 
+            <form onSubmit={requestSubmitted}> 
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                     <label for="Name" className="formStyle m-0">Name*</label>
@@ -106,7 +98,7 @@ function RequestContent()
                             <select id="club" name="club" className="form-control mb-2 " required >
                                 {
                                     clubs.map((club, index)=>{
-                                        return (<option value={club.club} key={index}>{club.club}</option>);
+                                        return (<option value={club.name} key={club.id}>{club.name}</option>);
                                     })
                                 }
                             </select>
