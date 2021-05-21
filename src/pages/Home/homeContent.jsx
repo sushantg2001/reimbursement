@@ -4,9 +4,9 @@ import axios from "axios"
 
 function HomeContent()
 {
-    const [student, setStudent] = useState([]);
+    const [entity, setentity] = useState([]);
     useEffect(async()=>{
-        let studentData=await axios.get('/studentapi/', {
+        let entityData=await axios.get('/entityapi/', {
                         headers: {
                             'Authorization':`Token ${localStorage.getItem('token')}`
                         }
@@ -18,7 +18,7 @@ function HomeContent()
                         .catch(err=>{
                             console.log(err);
                         })
-        setStudent(studentData)
+        setentity(entityData)
         },[])
     const[expand, setExpand] = useState(false);
     const[isClub, setClub] = useState(false);
@@ -27,7 +27,7 @@ function HomeContent()
         setExpand(true);
     }
     var d = new Date();
-    var today = d.getFullYear()+"-"; 
+    var today = d.getFullYear()+"-";
     if((d.getMonth()+1)<10 && d.getDate()<10)
     {
         today = today + "0"+ (d.getMonth()+1)+"-0"+ d.getDate();
@@ -45,7 +45,7 @@ function HomeContent()
     }
     const options= [
         {
-            option:"Student",
+            option:"entity",
             isAvailable: true
         },
         {
@@ -66,16 +66,16 @@ function HomeContent()
         }
     }
 
-    return (   
+    return (
         <>
         <div className="container  homeContainer mb-5  ">
             <h4 className="pt-4">
                 Submit New Reimbursement
             </h4>
             <p className="homePageContent pt-1 ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae.
             </p>
-            <form> 
+            <form>
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                     <label for="Name" className="formStyle m-0">Name*</label>
@@ -91,12 +91,12 @@ function HomeContent()
                         }
                     </select>
                     {
-                        isClub && 
+                        isClub &&
                             (<>
                             <label for="clubs" className="formStyle m-0">Select Club*</label>
                             <select id="club" name="club" className="form-control mb-2 " required >
                                 {
-                                    (student[0].club).map((club, index)=>{
+                                    (entity[0].club).map((club, index)=>{
                                         return (<option value={club.name} key={index}  >{club.name}</option>);
                                     })
                                 }
@@ -110,8 +110,8 @@ function HomeContent()
                         class="form-control mb-2 "
                             value={today}></input>
                         <label for="description" class="form-label formStyle m-0">Description*</label>
-                        <textarea required class="form-control mb-2 textArea " 
-                        id="exampleFormControlTextarea1" 
+                        <textarea required class="form-control mb-2 textArea "
+                        id="exampleFormControlTextarea1"
                         rows={expand? "4": "1" }
                         style={{resize:"none"}}
                         placeholder="Enter reimbursement details"
@@ -128,7 +128,7 @@ function HomeContent()
                 </div>
                 </form>
                 <div className="pt-4" >
-                    <em>    <strong style={{textDecoration:"underline"}}>Note:</strong> All the original copies of the documents should be submitted to the Office of Student Affairs.</em> 
+                    <em>    <strong style={{textDecoration:"underline"}}>Note:</strong> All the original copies of the documents should be submitted to the Office of entity Affairs.</em>
 
 
                 </div>

@@ -1,5 +1,5 @@
 from django.urls.conf import include
-from .views import student_view_set
+from .views import entity_view_set
 from rest_framework.authtoken import views
 from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token
@@ -7,7 +7,7 @@ from rest_framework import routers
 from .views import *
 
 router = routers.DefaultRouter()
-router.register('studentapi', viewset=student_view_set, basename='student')
+router.register('entityapi', viewset=entity_view_set, basename='entity')
 
 router1 = routers.DefaultRouter()
 router1.register('paymentapi', viewset=payment_view_set, basename='payment')

@@ -26,8 +26,8 @@ function RequestContent()
     function requestSubmitted(event)
     {
         event.preventDefault();
-        
-        axios.post('/studentapi/', {
+
+        axios.post('/entityapi/', {
             headers: {
                 'Authorization':`Token ${localStorage.getItem('token')}`
             }
@@ -48,7 +48,7 @@ function RequestContent()
     }
     const options= [
         {
-            option:"Student",
+            option:"entity",
             isAvailable: true
         },
         {
@@ -68,16 +68,16 @@ function RequestContent()
             setClub(false);
         }
     }
-    return (   
+    return (
         <>
         <div className="container  homeContainer ">
             <h4 className="pt-4">
                 Submit New Access Request
             </h4>
             <p className="homePageContent pt-1 ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id. Mauris a imperdiet elit. Cras bibendum nibh dolor, in interdum sem tempor vitae.
             </p>
-            <form onSubmit={requestSubmitted}> 
+            <form onSubmit={requestSubmitted}>
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                     <label for="Name" className="formStyle m-0">Name*</label>
@@ -91,7 +91,7 @@ function RequestContent()
                         }
                     </select>
                     {
-                        isClub && 
+                        isClub &&
                             (<>
                             <label for="clubs" className="formStyle m-0">Select Club*</label>
                             <select id="club" name="club" className="form-control mb-2 " required >
@@ -106,7 +106,7 @@ function RequestContent()
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="description" class="form-label formStyle m-0">Description*</label>
-                        <textarea required class="form-control mb-2" id="exampleFormControlTextarea1"                         
+                        <textarea required class="form-control mb-2" id="exampleFormControlTextarea1"
                         rows={expand? "4": "1" }
                         style={{resize:"none"}}
                         placeholder="Enter access request details"

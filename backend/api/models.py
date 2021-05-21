@@ -10,6 +10,7 @@ class club(models.Model):
     name = models.CharField(
         max_length=100, choices=club_names, default="empty")
     budget = models.PositiveIntegerField(default=0)
+    description = models.TextField()
 
     class Meta:
         verbose_name_plural = "Clubs"
@@ -17,11 +18,13 @@ class club(models.Model):
     def __str__(self) -> str:
         return self.name
 
-class student(models.Model):
+
+class entity(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     club = models.ManyToManyField(club, blank=True)
+
     def __str__(self) -> str:
         return self.name
 
@@ -30,11 +33,12 @@ class payment(models.Model):
     name = models.CharField(max_length=200)
     amount = models.PositiveIntegerField()
     description = models.TextField()
-    student = models.ForeignKey(student, on_delete=models.CASCADE)
+    entity = models.OneToOneField(entity, on_delete=models.SET_NULL,null=True)
     date = models.DateField(auto_now_add=True)
-    class purposes(models.TextChoices):
+
+    class types(models.TextChoices):
         club = "club"
-        student = "student"
+        entity = "entity"
 
     class statuses(models.TextChoices):
         approved = "Approved"
@@ -44,8 +48,8 @@ class payment(models.Model):
     status = models.CharField(
         max_length=10, choices=statuses.choices, default=statuses.pending)
     type = models.CharField(
-        max_length=10, choices=purposes.choices)
+        max_length=10, choices=types.choices)
+
 
     def __str__(self) -> str:
         return self.name
-

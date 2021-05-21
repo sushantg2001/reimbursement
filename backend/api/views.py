@@ -1,8 +1,8 @@
 from django.http import request
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import payment_serializer, student_serializer, club_serialzer
-from .models import payment, student, club, club_names
+from .serializers import payment_serializer, entity_serializer, club_serialzer
+from .models import payment, entity, club, club_names
 from rest_framework.permissions import IsAuthenticated, BasePermission
 
 class IsUser(BasePermission):
@@ -11,27 +11,27 @@ class IsUser(BasePermission):
         return boolean
 
 
-class IsStudent(BasePermission):
+class Isentity(BasePermission):
     def has_object_permission(self, request, view, obj):
-        return obj.student.user == request.user
+        return obj.entity.user == request.user
 
 class payment_view_set(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     serializer_class = payment_serializer
 
     def get_queryset(self):
-        current_student = student.objects.get(user=self.request.user)
-        payments = payment.objects.all().filter(student = current_student)
+        current_entity = entity.objects.get(user=self.request.user)
+        payments = payment.objects.all().filter(entity = current_entity)
         return payments
 
 
-class student_view_set(viewsets.ModelViewSet):
+class entity_view_set(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, IsUser]
-    serializer_class = student_serializer
+    serializer_class = entity_serializer
 
     def get_queryset(self):
-        students = student.objects.all().filter(user=self.request.user)
-        return students
+        entitys = entity.objects.all().filter(user=self.request.user)
+        return entitys
 
 
 class club_view_set(viewsets.ModelViewSet):
