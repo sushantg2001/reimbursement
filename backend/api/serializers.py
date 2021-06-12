@@ -4,9 +4,6 @@ from rest_framework import serializers
 from rest_framework.decorators import api_view
 from .models import club, payment, entity
 
-
-
-
 class club_serialzer(serializers.ModelSerializer):
     class Meta:
         model = club
@@ -19,7 +16,6 @@ class entity_serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class payment_serializer(serializers.ModelSerializer):
-    entity = entity_serializer(many=True, read_only=True)
     class Meta:
         model = payment
         fields = '__all__'
