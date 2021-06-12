@@ -17,6 +17,9 @@ html, body {
 .white{
   color:#fff;
 }
+.bg-color-lightest-grey{
+  background-color: #eee !important;
+}
 .nav{
   background-color:#3FADA8 ;
   font-family: 'Open Sans', sans-serif;
