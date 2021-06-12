@@ -1,4 +1,6 @@
 import './App.css';
+import AdminHome from "./pages/AdminHome/AdminHome"
+import AdminClubs from "./pages/Clubs/AdminClub"
 import Login from "./pages/Login/login"
 import Home from "./pages/Home/home"
 import History from "./pages/History/history"
@@ -31,9 +33,12 @@ const AuthRoute = ({ component: Component, ...rest }) => (
 )
 
 function App() {
+  const isAdmin = true;
   return (
     <>
-      <HashRouter basename="/">
+    {!isAdmin && (
+      <>
+        <HashRouter basename="/">
         <ScrollToTop/>
         <Switch>
           <AuthRoute exact path="/home" component={Home}/>
@@ -43,6 +48,24 @@ function App() {
           <Route exact path="/"  render={props => <Login {...props} />} />
         </Switch>
       </HashRouter>
+      </>
+    )}
+    {
+      (isAdmin) && (
+        <>
+          <HashRouter basename="/">
+          <ScrollToTop/>
+          <Switch>
+            <AuthRoute exact path="/admin-home" component={AdminHome}/>
+            <AuthRoute exact path="/clubs" component ={AdminClubs} />
+            <Route exact path="/"  render={props => <Login {...props} />} />
+          </Switch>
+        </HashRouter>
+        </>
+      )
+
+    }
+
     </>
   );
 }

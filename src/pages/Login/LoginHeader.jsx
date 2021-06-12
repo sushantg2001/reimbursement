@@ -28,7 +28,7 @@ function LoginHeader()
         .then(function (response) {
             localStorage.setItem('token', response.data.token);
             console.log(response.data.token);
-            history.push("/home");
+            history.push("/admin-home");
         })
         .catch(function (error) {
             window.location.reload();
