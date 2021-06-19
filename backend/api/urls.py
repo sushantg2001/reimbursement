@@ -17,4 +17,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('', include(router1.urls)),
     path('', include(router2.urls)),
+    path('login/', login.as_view()),
 ]
