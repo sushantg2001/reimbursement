@@ -4,22 +4,22 @@ import AdminTable from "./AdminTable"
 
 function AdminHomeContent()
 {
-    const [student, setStudent] = useState([]);
-    useEffect(async()=>{
-        let studentData=await axios.get('/studentapi/', {
-                        headers: {
-                            'Authorization':`Token ${localStorage.getItem('token')}`
-                        }
-                        })
-                        .then(res=>{
-                            console.log(res.data);
-                            return res.data;
-                        })
-                        .catch(err=>{
-                            console.log(err);
-                        })
-        setStudent(studentData)
-        },[])
+    // const [student, setStudent] = useState([]);
+    // useEffect(async()=>{
+    //     let studentData=await axios.get('/studentapi/', {
+    //                     headers: {
+    //                         'Authorization':`Token ${localStorage.getItem('token')}`
+    //                     }
+    //                     })
+    //                     .then(res=>{
+    //                         console.log(res.data);
+    //                         return res.data;
+    //                     })
+    //                     .catch(err=>{
+    //                         console.log(err);
+    //                     })
+    //     setStudent(studentData)
+    //     },[])
     
     const [isChecked, setCheck] = useState(true);
     function removeCheck()
@@ -30,8 +30,8 @@ function AdminHomeContent()
     {
         setCheck(true);
     }
-    const [search, setSearch] = useState("");
-    const [filteredReimbursements, setFilteredReimbursements] = useState([]);
+    // const [search, setSearch] = useState("");
+    // const [filteredReimbursements, setFilteredReimbursements] = useState([]);
   /*  useEffect(() => {
 
         if(document.getElementById("minAmountRadio").checked)
@@ -87,7 +87,7 @@ function AdminHomeContent()
                 <input className="form-control"
                 type="text"
                 placeholder="Filter Reimbursements"
-                onChange={(e) => setSearch(e.target.value)}
+               // onChange={(e) => setSearch(e.target.value)}
                 aria-describedby="addon-wrapping"
                 style={{borderRadius:"0px"}}
                 />

@@ -5,9 +5,6 @@ import { Redirect } from "react-router";
 import { useHistory } from "react-router-dom";
 
 
-axios.defaults.withCredentials = true;
-axios.defaults.xsrfCookieName = 'csrftoken'
-axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 function LoginHeader()
 {
     let history = useHistory();
@@ -23,24 +20,16 @@ function LoginHeader()
     }
     function formSubmit(event)
     {
-
-        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         event.preventDefault();
-        axios.get('/get_auth_token/login/', {
-            auth:
-
-            {username: email,
+        axios.post('/login/', {
+            // headers:{
+            username: email,
             password: password
-            }
-        }, 
-        {headers: {'X-CSRFToken': csrftoken}}
-
-        
+        // }
+    }
         )
         .then(function (response) {
-        //    localStorage.setItem('token', response.data.token);
-          //  console.log(response.data.token);
-        //   console.log("Logged in");
+            localStorage.setItem('token', response.data.token);
            history.push("/admin-home");
         })
         .catch(function (error) {
