@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 import { Redirect } from "react-router";
 import { useHistory } from "react-router-dom";
 
 
+axios.defaults.withCredentials = true;
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 function LoginHeader()
 {
     let history = useHistory();
@@ -20,20 +24,33 @@ function LoginHeader()
     function formSubmit(event)
     {
 
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         event.preventDefault();
-        axios.post('/get_auth_token/', {
-            username: email,
+        axios.get('/get_auth_token/login/', {
+            auth:
+
+            {username: email,
             password: password
-        })
+            }
+        }, 
+        {headers: {'X-CSRFToken': csrftoken}}
+
+        
+        )
         .then(function (response) {
-            localStorage.setItem('token', response.data.token);
-            console.log(response.data.token);
-            history.push("/admin-home");
+        //    localStorage.setItem('token', response.data.token);
+          //  console.log(response.data.token);
+        //   console.log("Logged in");
+           history.push("/admin-home");
         })
         .catch(function (error) {
-            window.location.reload();
+// console.log("Failed to login");
+           window.location.reload();
             console.log(error);
+
         });
+
+
 
     }
     return (

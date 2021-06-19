@@ -56,8 +56,8 @@ function App() {
           <HashRouter basename="/">
           <ScrollToTop/>
           <Switch>
-            <AuthRoute exact path="/admin-home" component={AdminHome}/>
-            <AuthRoute exact path="/clubs" component ={AdminClubs} />
+            <Route exact path="/admin-home" component={AdminHome}/>
+            <Route exact path="/clubs" component ={AdminClubs} />
             <Route exact path="/"  render={props => <Login {...props} />} />
           </Switch>
         </HashRouter>
