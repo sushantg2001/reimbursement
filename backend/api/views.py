@@ -60,10 +60,14 @@ class club_view_set(viewsets.ModelViewSet):
 
 class login(ObtainAuthToken):
     def post(self, request, *args, **kwargs):
+        print("here")
+        print(request.POST)
         username = request.POST.get('username')
         password = request.POST.get('password')
+        print(username, password)
         r = requests.post('http://localhost:8001/token-auth/',
                           data={'username': username, 'password': password})
+        print(r)
         if r.status_code == 200:
             userData = r.json()['user']
             if not userData['is_verified']:

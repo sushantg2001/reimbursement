@@ -22,19 +22,18 @@ function LoginHeader()
     {
         event.preventDefault();
         axios.post('/login/', {
-            // headers:{
             username: email,
             password: password
-        // }
     }
         )
         .then(function (response) {
+            console.log("Login successful")
             localStorage.setItem('token', response.data.token);
            history.push("/admin-home");
         })
         .catch(function (error) {
-// console.log("Failed to login");
-           window.location.reload();
+console.log("Failed to login");
+        //    window.location.reload();
             console.log(error);
 
         });

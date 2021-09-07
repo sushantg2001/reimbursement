@@ -9,34 +9,34 @@ import Clubs from "./pages/Clubs/Clubs"
 import { HashRouter, Route, Switch,   Redirect} from 'react-router-dom'
 import ScrollToTop from "./ScrollToTop"
 
-const checkAuth = () => {
-  const token = localStorage.getItem('token');
-  if (!token ) {
-    return false;
-  }
-  try {
+// const checkAuth = () => {
+//   const token = localStorage.getItem('token');
+//   if (!token ) {
+//     return false;
+//   }
+//   try {
 
-  } catch (e) {
-    return false;
-  }
+//   } catch (e) {
+//     return false;
+//   }
 
-  return true;
-}
-const AuthRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={props => (
-    checkAuth() ? (
-      <Component {...props} />
-    ) : (
-        <Redirect to={{ pathname: '/' }} />
-      )
-  )} />
-)
+//   return true;
+// }
+// const AuthRoute = ({ component: Component, ...rest }) => (
+//   <Route {...rest} render={props => (
+//     checkAuth() ? (
+//       <Component {...props} />
+//     ) : (
+//         <Redirect to={{ pathname: '/' }} />
+//       )
+//   )} />
+// )
 
 function App() {
-  const isAdmin = true;
+  // const isAdmin = true;
   return (
     <>
-    {!isAdmin && (
+    {/* {!isAdmin && (
       <>
         <HashRouter basename="/">
         <ScrollToTop/>
@@ -62,9 +62,17 @@ function App() {
           </Switch>
         </HashRouter>
         </>
-      )
+      ) */}
 
-    }
+    {/* } */}
+    <>
+          <HashRouter basename="/">
+          <ScrollToTop/>
+          <Switch>
+            <Route exact path="/" component={AdminHome}/>
+          </Switch>
+        </HashRouter>
+        </>
 
     </>
   );
