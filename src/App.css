@@ -27,6 +27,15 @@ html, body {
   font-size: 80%;
 
 }
+.nav-text{
+  font-weight: 800;
+  font-family: 'Open Sans', sans-serif;
+  font-size: xx-large;
+  color:#3FADA8;
+  margin: auto;
+  text-align: right;
+
+}
 /* .navStyle:hover{
   color:#000;
   text-decoration: none;
@@ -121,8 +130,9 @@ input[type='radio']:checked:after {
 }
 /* Login */
 .campus-bg{
-  height:100vh;
-  width:100vw;
+  /* max-height: 100%;
+
+  width:100vw; */
   background-color: #eee;
 }
 .loginFooter{
@@ -141,6 +151,9 @@ input[type='radio']:checked:after {
 @media only screen and (max-width: 992px){
   .navbar-img{
     width:90%
+  }
+  .nav-text{
+    font-size: x-large;
   }
 }
 @media only screen and (min-width: 992px){

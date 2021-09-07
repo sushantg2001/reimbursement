@@ -6,7 +6,7 @@ import axios from "axios";
 
 function HistoryContent()
 {
-    const [records, setRecords]= useState([]);
+    // const [records, setRecords]= useState([]);
     // axios.get('/paymentapi/', {
     //     headers: {
     //         'Authorization':`Token ${localStorage.getItem('token')}`
@@ -20,21 +20,123 @@ function HistoryContent()
     // console.error(error);
     // return;
     // })
-    useEffect(async()=>{
-        let recordsData=await axios.get('/paymentapi/', {
-                      headers: {
-                          'Authorization':`Token ${localStorage.getItem('token')}`
-                      }
-                      })
-                        .then(res=>{
-                          return res.data;
-                        })
-                        .catch(err=>{
-                          console.log(err);
-                        })
-        setRecords(recordsData)
-        console.log(recordsData)
-      },[]);
+    // useEffect(async()=>{
+    //     let recordsData=await axios.get('/paymentapi/', {
+    //                   headers: {
+    //                       'Authorization':`Token ${localStorage.getItem('token')}`
+    //                   }
+    //                   })
+    //                     .then(res=>{
+    //                       return res.data;
+    //                     })
+    //                     .catch(err=>{
+    //                       console.log(err);
+    //                     })
+    //     setRecords(recordsData)
+    //     console.log(recordsData)
+    //   },[]);
+    const records = [
+        {
+            index: 1,
+            purpose: "Purpose 1",
+            amount: 1500,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Completed",
+            id: "1234",
+            date: "03-12-12",
+            processed: "12-12-12"
+        },
+        {
+            index:2,
+            purpose: "Purpose 2",
+            amount: 1700,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Rejected",
+            id: "1235",
+            date: "04-12-12",
+            processed: ""
+        },
+        {
+            index: 3,
+            purpose: "Purpose 3",
+            amount: 5000,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Pending",
+            id: "1236",
+            date: "05-12-12",
+            processed: ""
+        },
+        {
+            index :4,
+            purpose: "Purpose 4",
+            amount: 1000,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Pending",
+            id: "1237",
+            date: "06-12-12",
+            processed: ""
+        },
+        {
+            index :5,
+            purpose: "Purpose 5",
+            amount: 1200,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Completed",
+            id: "1238",
+            date: "07-12-12",
+            processed: ""
+        },
+        {
+            index :6,
+            purpose: "Purpose 6",
+            amount: 4000,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Pending",
+            id: "1239",
+            date: "08-12-12",
+            processed: ""
+        },
+        {
+            index :7,
+            purpose: "Purpose 7",
+            amount: 5200,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Completed",
+            id: "1240",
+            date: "09-12-12",
+            processed: "12-12-12"
+        },
+        {
+            index :8,
+            purpose: "Purpose 8",
+            amount: 3200,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Completed",
+            id: "1241",
+            date: "10-12-12",
+            processed: "12-12-12"
+        },
+        {
+            index :9,
+            purpose: "Purpose 9",
+            amount: 7200,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Completed",
+            id: "1242",
+            date: "11-12-12",
+            processed: "12-12-12"
+        },
+        {
+            index :10,
+            purpose: "Purpose 10",
+            amount: 200,
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ipsum turpis, et molestie ipsum cursus id.",
+            status:"Completed",
+            id: "1243",
+            date: "12-12-12",
+            processed: "12-12-12"
+        }
+    ] 
     const recordsFinal = records.reverse();
     const [isMap, setMap] = useState(true)
     function handleMap()
@@ -153,7 +255,7 @@ function HistoryContent()
                         <Card 
                         key={record.id}
                         description={record.description} 
-                        purpose={record.name} 
+                        purpose={record.purpose} 
                         amount={record.amount} 
                         status={record.status} 
                         id={record.id}

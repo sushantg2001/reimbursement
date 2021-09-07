@@ -9,42 +9,42 @@ import Clubs from "./pages/Clubs/Clubs"
 import { HashRouter, Route, Switch,   Redirect} from 'react-router-dom'
 import ScrollToTop from "./ScrollToTop"
 
-// const checkAuth = () => {
-//   const token = localStorage.getItem('token');
-//   if (!token ) {
-//     return false;
-//   }
-//   try {
+const checkAuth = () => {
+  const token = localStorage.getItem('token');
+  if (!token ) {
+    return false;
+  }
+  try {
 
-//   } catch (e) {
-//     return false;
-//   }
+  } catch (e) {
+    return false;
+  }
 
-//   return true;
-// }
-// const AuthRoute = ({ component: Component, ...rest }) => (
-//   <Route {...rest} render={props => (
-//     checkAuth() ? (
-//       <Component {...props} />
-//     ) : (
-//         <Redirect to={{ pathname: '/' }} />
-//       )
-//   )} />
-// )
+  return true;
+}
+const AuthRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={props => (
+    checkAuth() ? (
+      <Component {...props} />
+    ) : (
+        <Redirect to={{ pathname: '/' }} />
+      )
+  )} />
+)
 
 function App() {
-  // const isAdmin = true;
+  const isAdmin = false;
   return (
     <>
-    {/* {!isAdmin && (
+    {!isAdmin && (
       <>
         <HashRouter basename="/">
         <ScrollToTop/>
         <Switch>
-          <AuthRoute exact path="/home" component={Home}/>
-          <AuthRoute exact path="/past-reimbursements" component={History} />
-          <AuthRoute exact path="/request" component={Request} />
-          <AuthRoute exact path="/clubs" component ={Clubs} />
+          <Route exact path="/home" component={Home}/>
+          <Route exact path="/past-reimbursements" component={History} />
+          <Route exact path="/request" component={Request} />
+          <Route exact path="/clubs" component ={Clubs} />
           <Route exact path="/"  render={props => <Login {...props} />} />
         </Switch>
       </HashRouter>
@@ -62,19 +62,20 @@ function App() {
           </Switch>
         </HashRouter>
         </>
-      ) */}
+      )
 
-    {/* } */}
-    <>
+    }
+    {/* <>
           <HashRouter basename="/">
           <ScrollToTop/>
           <Switch>
             <Route exact path="/" component={AdminHome}/>
           </Switch>
         </HashRouter>
-        </>
+        </> */}
 
     </>
+
   );
 }
 
