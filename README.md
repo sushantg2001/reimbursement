@@ -3,5 +3,6 @@ To run frontend:
 2. ```npm start```
 
 To run backend:
-1. ```cd backend```
-2. ```python manage.py runserver```
+1. ```pip install -r requirements.txt```
+2. ```cd backend```
+3. ```python manage.py runserver```
