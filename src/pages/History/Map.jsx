@@ -3,7 +3,10 @@ import {Line} from 'react-chartjs-2';
 
 function Map(props) {
 	const records = props.records.reverse();
-	const temp = records.slice(0, 10)
+	const records2 = [...records];
+	records2.reverse();
+	const temp = records2.slice(0, 10)
+	temp.reverse();
 
 
 	var dates;

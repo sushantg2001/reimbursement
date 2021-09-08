@@ -44,7 +44,6 @@ function App() {
           <Route exact path="/home" component={Home}/>
           <Route exact path="/past-reimbursements" component={History} />
           <Route exact path="/request" component={Request} />
-          <Route exact path="/clubs" component ={Clubs} />
           <Route exact path="/"  render={props => <Login {...props} />} />
         </Switch>
       </HashRouter>

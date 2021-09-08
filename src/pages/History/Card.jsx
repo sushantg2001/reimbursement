@@ -35,7 +35,7 @@ function Card(props)
                 <Modal isOpen={modal} toggle={toggle} >
                     <ModalHeader toggle={toggle}><h3 className="pt-0 pb-0 mb-0 blue-color">{props.purpose}</h3></ModalHeader>
                     <ModalBody>
-                        <p>{props.description}</p>
+                        <p><span className="fw-700">{"[ID#"+ props.id +"] "}</span>{props.description}</p>
                         <h5 >Details</h5>
                         <table class="table table-striped ">
                             <tbody>

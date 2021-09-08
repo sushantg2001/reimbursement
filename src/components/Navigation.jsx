@@ -29,9 +29,6 @@ function Navigation()
                     <li class="nav-item ">
                             <NavLink className="m-auto text-center white links nav-link" activeClassName="activeLinks"    to="/request">REQUEST ACCESS</NavLink>
                     </li>
-                    <li class="nav-item ">
-                            <NavLink className="m-auto text-center white links nav-link " activeClassName="activeLinks"    to="/clubs">CLUBS</NavLink>
-                    </li>
                     <li class="nav-item">
                             <NavLink exact={true} className="m-auto text-center white links nav-link" activeClassName="activeLinks" onClick={()=> localStorage.clear()} to="/">LOGOUT</NavLink>                        
                     </li>

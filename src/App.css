@@ -204,3 +204,61 @@ input[type='radio']:checked:after {
 {
   background-color:#fff;
 } */
+
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationItem {
+  background: #fff;
+  border: 1px solid #666;
+  padding: 10px 15px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  position: relative;
+  margin: 0 5px;
+  color: #888;
+  text-align: center;
+  cursor: pointer;
+}
+
+.paginationItem span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.no-reimb-pagination{
+  width:100%;
+  text-align: center;
+}
+.prev,
+.next {
+  background: #fff;
+  border: none;
+  padding: 10px;
+  color: #3FADA8;
+  margin: 0 10px;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.paginationItem.active {
+  border: 2px solid #3FADA8;
+  pointer-events: none;
+  color:#000;
+}
+
+.prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: #999;
+}
