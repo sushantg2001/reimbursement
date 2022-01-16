@@ -1,5 +1,13 @@
 # OSA IIITD
 
+# FRONTEND:
+To run frontend:
+1. ```cd reimbursement-frontend```
+2. ```npm install```
+3. ```npm start```
+
+
+# BACKEND:
 ## Authentication:
 
     1. username = test_user, password = common123
