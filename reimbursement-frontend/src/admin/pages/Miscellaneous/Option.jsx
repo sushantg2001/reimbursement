@@ -82,11 +82,11 @@ function Option(props) {
                                                 <ModalHeader toggle={toggle2}><h3 className="pt-0 pb-0 mb-0 blue-color">Delete Option: {props.data}</h3></ModalHeader>
                                                 <ModalBody>
                                                       <p className="pb-0 mb-0" style={{ fontWeight: "bolder" }}> Are you sure you want to delete the option?</p>
-                                                      <div className="input-group  flex-nowrap mb-4  w-75">
+                                                      <div class="input-group  flex-nowrap mb-4  w-75">
 
                                                             <form onSubmit={handleDeleteOption} >
 
-                                                                  <button type="submit" className="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#d9534f", borderRadius: "30px" }}>
+                                                                  <button type="submit" class="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#d9534f", borderRadius: "30px" }}>
                                                                         <span className="fw-700 white" style={{ fontSize: "80%" }}>
                                                                               <img src="https://img.icons8.com/ios-glyphs/20/ffffff/filled-trash.png" alt="delete" />
                                                                               YES, DELETE</span>
@@ -98,7 +98,7 @@ function Option(props) {
                                           </div>
                                           <ModalFooter>
 
-                                                <button type="submit" onClick={toggle2} className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }} onSubmit={() => { window.location.reload() }}><span className="fw-700 white" style={{ fontSize: "80%" }}>CLOSE</span></button>
+                                                <button type="submit" onClick={toggle2} class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }} onSubmit={() => { window.location.reload() }}><span className="fw-700 white" style={{ fontSize: "80%" }}>CLOSE</span></button>
                                           </ModalFooter>
                                     </Modal>
                               </div>

@@ -31,10 +31,11 @@ function NavigationAdmin() {
                         <NavLink className="m-auto text-center white links nav-link " activeClassName="activeLinks" to="/miscellaneous">MISCELLANEOUS</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink exact={true} className="m-auto text-center white links nav-link" activeClassName="activeLinks" onClick={() => localStorage.clear()} to="/">LOGOUT</NavLink>
+                        <a exact={true} className="m-auto text-center white links nav-link" activeClassName="activeLinks" href= "http://osa.iiitd.edu.in/" >LOGOUT</a>
                     </li>
                 </div>
             </ul>
+
             {/* <HashRouter /> */}
         </>
     )

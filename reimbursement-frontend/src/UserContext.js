@@ -1,4 +1,4 @@
-import React, { useContext, useState} from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 const UserContext = React.createContext();
 const UserUpdateContext = React.createContext()
@@ -11,7 +11,7 @@ export function useUserUpdate(){
 }
 
 export function UserProvider({ children }) {
-      const [isAdmin, setIsAdmin] = useState((localStorage.getItem('is_admin'))=== 'true' );
+      const [isAdmin, setIsAdmin] = useState((localStorage.getItem('is_admin'))=== 'true');
       function updateAdmin(val) {
             setIsAdmin(val);
       }

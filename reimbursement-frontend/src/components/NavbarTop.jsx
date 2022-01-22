@@ -1,4 +1,5 @@
 import React from "react"
+import logo from "./iiitd.png"
 
 function NavbarTop()
 {
@@ -8,7 +9,7 @@ function NavbarTop()
                 <nav className="navbar">
                     <div className="row">
                         <div className="col-md-6 col-sm-12 ml-0 pl-0">
-                            <img src="https://www.iiitd.ac.in/sites/default/files/images/logo/style3colorlarge.jpg" className="navbar-img" alt="IIITD"></img>
+                            <img src={logo} className="navbar-img" alt="IIITD"></img>
                         </div>
                         <span className="col-md-6 d-none d-md-block nav-text  navbar-text">
                             REIMBURSEMENT PORTAL

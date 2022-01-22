@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import { useHistory } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 
 let toastStyle = {
@@ -9,6 +10,7 @@ let toastStyle = {
     fontSize: 'medium'
 }
 function RequestContent() {
+    let history = useHistory();
     const [expand, setExpand] = useState(false);
     const [isClub, setClub] = useState(false);
     const [options, setOptions] = useState([]);
