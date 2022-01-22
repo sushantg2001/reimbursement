@@ -199,13 +199,13 @@ function HomeContent() {
                     Submit your reimbursement claims by filling in the form with appropriate purpose, date of event, description and amount. Check the status of the reimbursement of email and under Past Reimbursements tab.
                 </p>
                 <form onSubmit={handleSubmitReimbursement}>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <label for="Name" className="formStyle m-0">Name*</label>
-                            <input type="text" class="form-control mb-2 " required value={RName} onChange={updateRName} />
-                            <label for="amount" className="formStyle m-0">Amount Required*</label>
-                            <input type="number" class="form-control mb-2 " required value={RAmount} onChange={updateRAmount} />
-                            <label for="purpose" className="formStyle m-0">Purpose*</label>
+                    <div className="row">
+                        <div className="col-md-6 col-sm-12">
+                            <label htmlFor="Name" className="formStyle m-0">Name*</label>
+                            <input type="text" className="form-control mb-2 " required value={RName} onChange={updateRName} />
+                            <label htmlFor="amount" className="formStyle m-0">Amount Required*</label>
+                            <input type="number" className="form-control mb-2 " required value={RAmount} onChange={updateRAmount} />
+                            <label htmlFor="purpose" className="formStyle m-0">Purpose*</label>
                             <select id="purpose" name="purpose" className="form-control mb-2 " required onChange={updateClub}>
                                 {
                                     options.map((option, index) => {
@@ -216,7 +216,7 @@ function HomeContent() {
                             {
                                 isClub &&
                                 (<>
-                                    <label for="clubs" className="formStyle m-0">Select Club*</label>
+                                    <label htmlFor="clubs" className="formStyle m-0">Select Club*</label>
                                     <select id="club" name="club" className="form-control mb-2 " required onChange={updateClubBudgetLeft} >
                                         {
                                             (clubs).map((club, index) => {
@@ -228,13 +228,13 @@ function HomeContent() {
                             }
                             {isClub && <p className="p-0 m-0 pull-right"><span className="club-budget-text">Club Budget Left:</span> <span className="club-budget-amount-text">₹{clubBudgetLeft}</span></p>}
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <label for="start" className="formStyle m-0">Date of event</label>
+                        <div className="col-md-6 col-sm-12">
+                            <label htmlFor="start" className="formStyle m-0">Date of event</label>
                             <input type="date" id="start" name="trip-start"
-                                class="form-control mb-2 "
+                                className="form-control mb-2 "
                             ></input>
-                            <label for="description" class="form-label formStyle m-0">Description*</label>
-                            <textarea required class="form-control mb-2 textArea "
+                            <label htmlFor="description" className="form-label formStyle m-0">Description*</label>
+                            <textarea required className="form-control mb-2 textArea "
                                 id="exampleFormControlTextarea1"
                                 rows={expand ? "4" : "1"}
                                 style={{ resize: "none" }}
@@ -243,11 +243,11 @@ function HomeContent() {
                                 onChange={updateRDescription}
                                 value={RDescription}
                             ></textarea>
-                            {/* <div class="m-0 mb-2 p-0 ">
-                                <label for="formFileMultiple" class="form-label formStyle m-0 p-0">Upload documents</label>
-                                <input class="form-control p-0 m-0" type="file" id="formFileMultiple" multiple />
+                            {/* <div className="m-0 mb-2 p-0 ">
+                                <label htmlFor="formFileMultiple" className="form-label formStyle m-0 p-0">Upload documents</label>
+                                <input className="form-control p-0 m-0" type="file" id="formFileMultiple" multiple />
                             </div> */}
-                            <button type="submit" class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>SUBMIT</span></button>
+                            <button type="submit" className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>SUBMIT</span></button>
 
                         </div>
 

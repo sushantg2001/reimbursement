@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import { useHistory } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 
 let toastStyle = {
@@ -10,7 +9,6 @@ let toastStyle = {
     fontSize: 'medium'
 }
 function RequestContent() {
-    let history = useHistory();
     const [expand, setExpand] = useState(false);
     const [isClub, setClub] = useState(false);
     const [options, setOptions] = useState([]);
@@ -150,9 +148,9 @@ function RequestContent() {
                     Submit a new Access Request in order to submit new reimbursements with the access you require, once it gets approved.
                 </p>
                 <form onSubmit={requestSubmitted}>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <label for="purpose" className="formStyle m-0">Purpose*</label>
+                    <div className="row">
+                        <div className="col-md-6 col-sm-12">
+                            <label htmlFor="purpose" className="formStyle m-0">Purpose*</label>
                             <select required id="purpose" name="purpose" className="form-control mb-2" onChange={updateClub}>
                                 {
                                     options.map((option, index) => {
@@ -163,7 +161,7 @@ function RequestContent() {
                             {
                                 isClub &&
                                 (<>
-                                    <label for="clubs" className="formStyle m-0">Select Club*</label>
+                                    <label htmlFor="clubs" className="formStyle m-0">Select Club*</label>
                                     <select id="club" name="club" className="form-control mb-2 " required onChange={updateRClub}>
                                         {
                                             clubs.map((club) => {
@@ -174,16 +172,16 @@ function RequestContent() {
                                 </>)
                             }
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <label for="description" class="form-label formStyle m-0">Description*</label>
-                            <textarea required class="form-control mb-2" id="exampleFormControlTextarea1"
+                        <div className="col-md-6 col-sm-12">
+                            <label htmlFor="description" className="form-label formStyle m-0">Description*</label>
+                            <textarea required className="form-control mb-2" id="exampleFormControlTextarea1"
                                 rows={expand ? "3" : "1"}
                                 style={{ resize: "none" }}
                                 placeholder="Enter access request details"
                                 onClick={handleExpand}
                                 value={rDescription}
                                 onChange={updateRDescription}></textarea>
-                            <button type="submit" class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>SUBMIT</span></button>
+                            <button type="submit" className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>SUBMIT</span></button>
                         </div>
                     </div>
                 </form>

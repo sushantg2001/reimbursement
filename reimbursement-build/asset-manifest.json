@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/reimbursement-app-iiitd/static/css/main.f962d8d7.chunk.css",
+    "main.js": "/reimbursement-app-iiitd/static/js/main.c6ecb898.chunk.js",
+    "main.js.map": "/reimbursement-app-iiitd/static/js/main.c6ecb898.chunk.js.map",
+    "runtime-main.js": "/reimbursement-app-iiitd/static/js/runtime-main.5ba73f24.js",
+    "runtime-main.js.map": "/reimbursement-app-iiitd/static/js/runtime-main.5ba73f24.js.map",
+    "static/css/2.70687d7e.chunk.css": "/reimbursement-app-iiitd/static/css/2.70687d7e.chunk.css",
+    "static/js/2.858e7c15.chunk.js": "/reimbursement-app-iiitd/static/js/2.858e7c15.chunk.js",
+    "static/js/2.858e7c15.chunk.js.map": "/reimbursement-app-iiitd/static/js/2.858e7c15.chunk.js.map",
+    "static/js/3.dc73c03a.chunk.js": "/reimbursement-app-iiitd/static/js/3.dc73c03a.chunk.js",
+    "static/js/3.dc73c03a.chunk.js.map": "/reimbursement-app-iiitd/static/js/3.dc73c03a.chunk.js.map",
+    "index.html": "/reimbursement-app-iiitd/index.html",
+    "static/css/2.70687d7e.chunk.css.map": "/reimbursement-app-iiitd/static/css/2.70687d7e.chunk.css.map",
+    "static/css/main.f962d8d7.chunk.css.map": "/reimbursement-app-iiitd/static/css/main.f962d8d7.chunk.css.map",
+    "static/js/2.858e7c15.chunk.js.LICENSE.txt": "/reimbursement-app-iiitd/static/js/2.858e7c15.chunk.js.LICENSE.txt",
+    "static/media/cover.e10196b0.png": "/reimbursement-app-iiitd/static/media/cover.e10196b0.png",
+    "static/media/font-awesome.min.css": "/reimbursement-app-iiitd/static/media/fontawesome-webfont.f691f37e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5ba73f24.js",
+    "static/css/2.70687d7e.chunk.css",
+    "static/js/2.858e7c15.chunk.js",
+    "static/css/main.f962d8d7.chunk.css",
+    "static/js/main.c6ecb898.chunk.js"
+  ]
+}

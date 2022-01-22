@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ReactToPrint from "react-to-print";
 
 /* This file contains the Card for past reimbursements along with modal and printing reimbursement. */
@@ -32,7 +32,7 @@ function Card(props) {
                     <ModalBody>
                         <p><span className="fw-700">{"[ID#" + props.id + "] "}</span>{props.description}</p>
                         <h5 >Details</h5>
-                        <table class="table table-striped ">
+                        <table className="table table-striped ">
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
@@ -77,10 +77,10 @@ function Card(props) {
                             <ModalFooter>
 
                             <ReactToPrint
-                                trigger={() => <button class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#49F043", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>PRINT</span></button>}
+                                trigger={() => <button className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#49F043", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>PRINT</span></button>}
                                 content={() => componentRef}
                             />
-                            <button type="submit" onClick={toggle} class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>CLOSE</span></button>
+                            <button type="submit" onClick={toggle} className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>CLOSE</span></button>
                         </ModalFooter>
                     </Modal>
                 </div>

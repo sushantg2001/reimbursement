@@ -3642,6 +3642,11 @@
   "resolved" "https://registry.yarnpkg.com/cookie/-/cookie-0.4.0.tgz"
   "version" "0.4.0"
 
+"cookies-js@^1.2.3":
+  "integrity" "sha1-AzFQSefFK+4/cxhqaRZ+qw3bLTE="
+  "resolved" "https://registry.npmjs.org/cookies-js/-/cookies-js-1.2.3.tgz"
+  "version" "1.2.3"
+
 "copy-concurrently@^1.0.0":
   "integrity" "sha512-f2domd9fsVDFtaFcbaRZuYXwtdmnzqbADSwhSWYxYB/Q8zsdUUFMXVRwXGDMWmbEzAn1kdRrtI1T/KTFOL4X2A=="
   "resolved" "https://registry.yarnpkg.com/copy-concurrently/-/copy-concurrently-1.0.5.tgz"

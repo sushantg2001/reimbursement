@@ -225,7 +225,7 @@ function Card(props) {
                             <ModalBody>
                                 <p><span className="fw-700">{"[Budget# ₹" + props.budget + "] "}</span>{props.description}</p>
 
-                                <div class="input-group  flex-nowrap mb-4 mt-1 w-75">
+                                <div className="input-group  flex-nowrap mb-4 mt-1 w-75">
 
                                     <form onSubmit={handleUpdateName}>
                                         <input className="form-control"
@@ -238,7 +238,7 @@ function Card(props) {
                                             required
                                         />
 
-                                        <button type="submit" class="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}>
+                                        <button type="submit" className="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}>
                                             <span className="fw-700 white" style={{ fontSize: "80%" }}>   <img src="https://img.icons8.com/fluency-systems-filled/24/ffffff/approve-and-update.png" alt="" /> UPDATE NAME</span>
                                         </button>
 
@@ -246,7 +246,7 @@ function Card(props) {
                                     </form>
 
                                 </div>
-                                <div class="input-group  flex-nowrap mb-4 mt-1 w-75">
+                                <div className="input-group  flex-nowrap mb-4 mt-1 w-75">
 
                                     <form onSubmit={handleUpdateBudget}>
                                         <input className="form-control"
@@ -258,7 +258,7 @@ function Card(props) {
                                             onChange={updateNewBudget}
                                             required
                                         />
-                                        <button type="submit" class="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}>
+                                        <button type="submit" className="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}>
 
                                             <span className="fw-700 white" style={{ fontSize: "80%" }}>   <img src="https://img.icons8.com/fluency-systems-filled/24/ffffff/approve-and-update.png" alt="" /> UPDATE BUDGET</span>
                                         </button>
@@ -267,7 +267,7 @@ function Card(props) {
 
 
                                 </div>
-                                <div class="input-group  flex-nowrap mb-2 mt-1 w-75">
+                                <div className="input-group  flex-nowrap mb-2 mt-1 w-75">
                                     <form onSubmit={handleUpdateDescription}>
 
                                         <input className="form-control"
@@ -280,7 +280,7 @@ function Card(props) {
                                             required
                                         />
 
-                                        <button type="submit" class="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}>
+                                        <button type="submit" className="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}>
 
                                             <span className="fw-700 white" style={{ fontSize: "80%" }}>  
                                              <img src="https://img.icons8.com/fluency-systems-filled/24/ffffff/approve-and-update.png" alt="" /> 
@@ -295,7 +295,7 @@ function Card(props) {
                         </div>
                         <ModalFooter>
 
-                            <button type="submit" onClick={toggle} class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }} onClick={() => { window.location.reload() }}><span className="fw-700 white" style={{ fontSize: "80%" }}>CLOSE</span></button>
+                            <button type="submit" onClick={toggle} className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }} onClick={() => { window.location.reload() }}><span className="fw-700 white" style={{ fontSize: "80%" }}>CLOSE</span></button>
                         </ModalFooter>
                     </Modal>
                 </div>
@@ -308,11 +308,11 @@ function Card(props) {
                             <ModalBody>
                                 <p><span className="fw-700">{"[Budget# ₹" + props.budget + "] "}</span>{props.description}</p>
                                 <p className="pb-0 mb-0" style={{fontWeight:"bolder"}}> Are you sure you want to delete the club?</p>
-                                <div class="input-group  flex-nowrap mb-4  w-75">
+                                <div className="input-group  flex-nowrap mb-4  w-75">
                                  
                                     <form onSubmit={handleDeleteClub}>
                             
-                                        <button type="submit" class="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#d9534f", borderRadius: "30px" }}>
+                                        <button type="submit" className="btn reimbBtn  p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#d9534f", borderRadius: "30px" }}>
                                             <span className="fw-700 white" style={{ fontSize: "80%" }}>   
                                             <img src="https://img.icons8.com/ios-glyphs/20/ffffff/filled-trash.png" alt="delete" />
                                              YES, DELETE</span>
@@ -324,7 +324,7 @@ function Card(props) {
                         </div>
                         <ModalFooter>
 
-                            <button type="submit" onClick={toggle2} class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }} onSubmit={() => { window.location.reload() }}><span className="fw-700 white" style={{ fontSize: "80%" }}>CLOSE</span></button>
+                            <button type="submit" onClick={toggle2} className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }} onSubmit={() => { window.location.reload() }}><span className="fw-700 white" style={{ fontSize: "80%" }}>CLOSE</span></button>
                         </ModalFooter>
                     </Modal>
                 </div>

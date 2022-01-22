@@ -187,7 +187,7 @@ function MiscellaneousContent() {
                     return <Option data={option.data} key={index} />
                 })}
 
-                <div class="input-group  flex-nowrap mt-3 w-25">
+                <div className="input-group  flex-nowrap mt-3 w-25">
 
                     <form onSubmit={addNewOption}>
                         <input required className="form-control"
@@ -198,7 +198,7 @@ function MiscellaneousContent() {
                             aria-describedby="addon-wrapping"
                             style={{ borderRadius: "0px" }}
                         />
-                        <button type="submit" class="btn reimbBtn btn-lg p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}> + ADD OPTION</span></button>
+                        <button type="submit" className="btn reimbBtn btn-lg p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}> + ADD OPTION</span></button>
 
                     </form>
 
@@ -210,17 +210,17 @@ function MiscellaneousContent() {
                 <hr></hr>
                 <h5 className="homePageContent pt-1" style={{ textDecoration: "underline" }}>Add Clubs</h5>
                 <form onSubmit={handleSubmit} >
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <label for="clubName" className="formStyle m-0">Name*</label>
-                            <input required type="text" class="form-control mb-2" name="clubName" onChange={changeClubName} value={clubName} />
-                            <label for="clubBudget" className="formStyle m-0">Budget*</label>
-                            <input required type="number" class="form-control mb-2" name="clubBudget" onChange={changeClubBudget} value={clubBudget} />
+                    <div className="row">
+                        <div className="col-md-6 col-sm-12">
+                            <label htmlFor="clubName" className="formStyle m-0">Name*</label>
+                            <input required type="text" className="form-control mb-2" name="clubName" onChange={changeClubName} value={clubName} />
+                            <label htmlFor="clubBudget" className="formStyle m-0">Budget*</label>
+                            <input required type="number" className="form-control mb-2" name="clubBudget" onChange={changeClubBudget} value={clubBudget} />
 
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <label for="clubDescription" class="form-label formStyle m-0">Description*</label>
-                            <textarea class="form-control mb-2" id="exampleFormControlTextarea1"
+                        <div className="col-md-6 col-sm-12">
+                            <label htmlFor="clubDescription" className="form-label formStyle m-0">Description*</label>
+                            <textarea className="form-control mb-2" id="exampleFormControlTextarea1"
                             required
                                 rows={expand ? "4" : "1"}
                                 style={{ resize: "none" }}
@@ -232,7 +232,7 @@ function MiscellaneousContent() {
                             >
 
                             </textarea>
-                            <button type="submit" class="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>+ ADD CLUB</span></button>
+                            <button type="submit" className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>+ ADD CLUB</span></button>
                         </div>
                     </div>
                 </form>
@@ -241,7 +241,7 @@ function MiscellaneousContent() {
                 <br></br>
                 <hr></hr>
                 <h5 className="homePageContent pt-1" style={{ textDecoration: "underline" }}>Edit Clubs</h5>
-                <div class="input-group  flex-nowrap mb-2 mt-3 w-25">
+                <div className="input-group  flex-nowrap mb-2 mt-3 w-25">
 
                     <input className="form-control"
                         type="text"
@@ -251,7 +251,7 @@ function MiscellaneousContent() {
                         style={{ borderRadius: "0px" }}
                     />
 
-                    <span class="input-group-text" id="addon-wrapping" style={{ borderRadius: "0px", color: "#fff", backgroundColor: "#3FADA8" }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <span className="input-group-text" id="addon-wrapping" style={{ borderRadius: "0px", color: "#fff", backgroundColor: "#3FADA8" }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
                     </span>

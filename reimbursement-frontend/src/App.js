@@ -7,9 +7,8 @@ import AdminHome from "./admin/pages/AdminHome/AdminHome"
 import ApproveRequest from './admin/pages/ApproveRequests/ApproveRequest';
 import Miscellaneous from './admin/pages/Miscellaneous/Miscellaneous';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
-import ScrollToTop from "./ScrollToTop"
-import React, { useContext } from 'react';
-import { useUser, useUserUpdate } from './UserContext.js'
+import React from 'react';
+import { useUser } from './UserContext.js'
 
 const checkAuth = () => {
   const token = localStorage.getItem('token');
@@ -37,6 +36,7 @@ const AuthRoute = ({ component: Component, ...rest }) => (
 
 function App() {
   let isAdmin = useUser();
+  // let isAdmin = false
   console.log("isAdmin", isAdmin)
   return (
     <>
@@ -44,7 +44,6 @@ function App() {
         (isAdmin === true) ?
           <>
             <HashRouter basename="/">
-              <ScrollToTop />
               <Switch>
                 <AuthRoute exact path="/home" component={AdminHome} />
                 <AuthRoute exact path="/approve-requests" component={ApproveRequest} />
@@ -55,7 +54,6 @@ function App() {
           </> :
           <>
             <HashRouter basename="/">
-              <ScrollToTop />
               <Switch>
                 <AuthRoute exact path="/home" component={Home} />
                 <AuthRoute exact path="/past-reimbursements" component={History} />

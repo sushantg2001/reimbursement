@@ -91,8 +91,8 @@ function HistoryContent() {
                     Look at the Past Reimbursements that you submitted with reimbursement details. Check the updated status of the requests and print your requests here.
                 </p>
 
-                <div class="input-group  flex-nowrap mb-2 mt-0">
-                    <span class="input-group-text" id="addon-wrapping" style={{ borderRadius: "0px", color: "#fff", backgroundColor: "#3FADA8" }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <div className="input-group  flex-nowrap mb-2 mt-0">
+                    <span className="input-group-text" id="addon-wrapping" style={{ borderRadius: "0px", color: "#fff", backgroundColor: "#3FADA8" }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
                     </span>
@@ -107,21 +107,21 @@ function HistoryContent() {
                 </div>
                 <p className="pb-0 mb-0" style={{ textDecoration: "underline" }}>Search by the filters:</p>
                 <div className=" pb-3 pt-2">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="minAmountRadio" value="option1" checked={isChecked} onClick={updateCheck} />
-                        <label class="form-check-label pl-1" for="minAmountRadio">Min Amount</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="minAmountRadio" value="option1" checked={isChecked} onClick={updateCheck} />
+                        <label className="form-check-label pl-1" htmlFor="minAmountRadio">Min Amount</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maxAmountRadio" value="option2" onClick={removeCheck} />
-                        <label class="form-check-label pl-1" for="maxAmountRadio">Max Amount</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="maxAmountRadio" value="option2" onClick={removeCheck} />
+                        <label className="form-check-label pl-1" htmlFor="maxAmountRadio">Max Amount</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="statusRadio" value="option3" onClick={removeCheck} />
-                        <label class="form-check-label pl-1" for="statusRadio">Status of Reimbursement</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="statusRadio" value="option3" onClick={removeCheck} />
+                        <label className="form-check-label pl-1" htmlFor="statusRadio">Status of Reimbursement</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="idRadio" value="option4" onClick={removeCheck} />
-                        <label class="form-check-label pl-1" for="idRadio">Reimbursement ID</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="idRadio" value="option4" onClick={removeCheck} />
+                        <label className="form-check-label pl-1" htmlFor="idRadio">Reimbursement ID</label>
                     </div>
                 </div>
 

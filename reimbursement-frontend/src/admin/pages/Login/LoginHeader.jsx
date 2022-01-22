@@ -66,18 +66,18 @@ function LoginHeader() {
                 <span style={{ fontSize: "120%" }}>REIMBURSEMENT PORTAL</span>
             </p>
          
-            <div class="row pb-3">
-                <div class="container offset-xxl-2 col-8">
-                    <form onSubmit={formSubmit} class="m-0 p-0 container ">
-                        <div class="mb-3">
-                            <label for="email" class="form-label formStyle m-0 p-0">Email address*</label>
-                            <input type="text" name="email" value={email} onChange={changeEmailVal} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+            <div className="row pb-3">
+                <div className="container offset-xxl-2 col-8">
+                    <form onSubmit={formSubmit} className="m-0 p-0 container ">
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label formStyle m-0 p-0">Email address*</label>
+                            <input type="text" name="email" value={email} onChange={changeEmailVal} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
                         </div>
-                        <div class="mb-3 ">
-                            <label for="exampleInputPassword1" class="form-label formStyle m-0 p-0">Password*</label>
-                            <input type="password" name="password" value={password} onChange={changePassVal} class="form-control" id="exampleInputPassword1" />
+                        <div className="mb-3 ">
+                            <label htmlFor="exampleInputPassword1" className="form-label formStyle m-0 p-0">Password*</label>
+                            <input type="password" name="password" value={password} onChange={changePassVal} className="form-control" id="exampleInputPassword1" />
                         </div>
-                        <button type="submit" class="btn  p-0 pt-1 pb-1 pl-4 pr-4 btn-block" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>LOGIN</span></button>
+                        <button type="submit" className="btn  p-0 pt-1 pb-1 pl-4 pr-4 btn-block" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>LOGIN</span></button>
                     </form>
                 </div>
             </div>

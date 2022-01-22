@@ -1,5 +1,4 @@
 {
-  "homepage": "http://nandikajain.github.io/reimbursement-app-iiitd/",
   "name": "reimbursement-app",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +11,7 @@
     "bootstrap": "^4.6.0",
     "bootstrap-social": "^5.1.1",
     "canvasjs": "^1.8.3",
+    "cookies-js": "^1.2.3",
     "cors": "^2.8.5",
     "font-awesome": "^4.7.0",
     "react": "^17.0.1",
