@@ -17,5 +17,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('user_api/', UserView.as_view()),
     path('login/', login.as_view()),
-    path('custom_login/', cookie_login.as_view())
+#    path('custom_login/', cookie_login.as_view())
+    path('custom_login/', CustomLoginView.as_view())
 ]

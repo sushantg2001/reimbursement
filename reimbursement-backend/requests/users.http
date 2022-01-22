@@ -17,3 +17,6 @@ Content-Type: {{json_type}}
     "username":"sushant19450@iiitd.ac.in",
     "password":"{{PASS}}"
 }
+
+###
+GET osa.iiitd.edu.in

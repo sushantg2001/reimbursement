@@ -59,13 +59,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-WSGI_APPLICATION = "config.local.wsgi.application"
+WSGI_APPLICATION = "config.prod.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "reimbursement",
-        "USER": "postgres",
-        "PASSWORD": "Wslpostgres@20",
+        "NAME": os.environ.get("POSTGRES_DATABASE"),
+        "USER": os.environ.get("POSTGRES_USER"),
+        "PASSWORD": os.environ.get("POSTGRES_PASS"),
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -83,8 +83,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
 DEBUG = True
+ALLOWED_HOSTS = ['reimbursement.osa.iiitd.edu.in', '192.168.1.240', 'localhost']
 
-SECRET_KEY = "local_key_123"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
@@ -96,7 +97,7 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 
 # Parameters for app use
-AUTH_URL = "http://localhost:8001/token-auth/"
-APP_URL = "localhost:8002/"
-ADMIN_URL = "localhost:8002/admin"
+AUTH_URL = "http://reimbursement.osa.iiitd.edu.in/token-auth/"
+APP_URL = "http://reimbursement.osa.iiitd.edu.in/"
+ADMIN_URL = "http://reimbursement.osa.iiitd.edu.in/admin/"
 CURRENT_USER_URL = "http://auth.osa.iiitd.edu.in/core/current_user/"

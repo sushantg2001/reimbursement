@@ -65,11 +65,6 @@ class ReimbursementViewSet(viewsets.ModelViewSet):
             return Reimbursement.objects.all()
         return Reimbursement.objects.all().filter(user=user)
 
-    def perform_create(self, serializer):
-        instance = serializer.save()
-        # newReimbursementMail(instance)
-
-
 class ClubViewSet(viewsets.ModelViewSet):
     authentication_classes = [BearerAuthentication]
     permission_classes = [IsAuthenticated, IsAdmin]

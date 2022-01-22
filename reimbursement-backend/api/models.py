@@ -1,4 +1,5 @@
 from os import access, stat
+from turtle import update
 from django.db import models
 from django.db.models.deletion import DO_NOTHING, SET_NULL
 from django.db.models.expressions import F
@@ -8,6 +9,8 @@ from requests.api import delete, options, post, request
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from django.utils import timezone
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 # def send_request_mail(data):
 #     send_email(
@@ -72,6 +75,11 @@ class Reimbursement(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    def clean(self) -> None:
+        super().clean()
+        if self.club and self.club.budget < self.amount:
+            raise ValidationError(_("Amount exceeds available budget"))
+
 
 class ClubRequest(models.Model):
     status = models.CharField(choices=AVAILABLE_STATUS, max_length=10, default=PENDING)
@@ -128,7 +136,19 @@ class File(models.Model):
 
 
 @receiver(pre_save, sender=Reimbursement)
-def auto_now(sender, instance, **kwargs):
-    print('testing')
+def auto_now(sender, instance, update_fields=None, **kwargs):
     if instance.pk:
         instance.processed_date_time = timezone.now()
+    if instance._state.adding:
+        if (instance.status is APPROVED) and instance.club:
+                if instance.amount < instance.club.budget:
+                    raise ValidationError(_("Amount exceeds available budget"))
+                else:
+                    instance.club.budget = instance.club.budget - instance.amount
+    else:
+        old_instance = Reimbursement.objects.get(pk=instance.pk)
+        if (old_instance.status is not APPROVED and instance.status is APPROVED) and instance.club:
+            if instance.amount < instance.club.budget:
+                raise ValidationError(_("Amount exceeds available budget"))
+            else:
+                instance.club.budget = instance.club.budget - instance.amount
