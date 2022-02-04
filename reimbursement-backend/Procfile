@@ -1,2 +1,2 @@
-release: python3 manage.py migrate
-web: gunicorn config.test.wsgi
+release: python3 reimbursement-backendmanage.py migrate
+web: gunicorn reimbursement-backend/config.test.wsgi
