@@ -9,6 +9,7 @@ import axios from "axios";
 import {UserProvider} from "./UserContext.js"
 
 axios.defaults.baseURL = 'http://reimbursement.osa.iiitd.edu.in/api/';
+// axios.defaults.bareURL = 'https://reimbursement-app.herokuapp.com/api'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
 
 

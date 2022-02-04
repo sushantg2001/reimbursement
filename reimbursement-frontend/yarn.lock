@@ -9186,6 +9186,11 @@
     "ansi-styles" "^4.0.0"
     "react-is" "^17.0.1"
 
+"primeicons@^5.0.0":
+  "integrity" "sha512-heygWF0X5HFI1otlZE62pp6ye7sZ8om78J9au2BRkg8O7Y8AHTZ9qKMRzchZUHLe8zUAvdi6hZzzm9XxgwIExw=="
+  "resolved" "https://registry.npmjs.org/primeicons/-/primeicons-5.0.0.tgz"
+  "version" "5.0.0"
+
 "process-nextick-args@~2.0.0":
   "integrity" "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="
   "resolved" "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz"

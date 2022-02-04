@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  zoom: 1.2;
 }
 .wrapper {
   height:auto !important;
