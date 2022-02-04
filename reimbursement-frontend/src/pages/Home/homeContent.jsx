@@ -243,10 +243,10 @@ function HomeContent() {
                                 onChange={updateRDescription}
                                 value={RDescription}
                             ></textarea>
-                            {/* <div className="m-0 mb-2 p-0 ">
+                            <div className="m-0 mb-2 p-0 ">
                                 <label htmlFor="formFileMultiple" className="form-label formStyle m-0 p-0">Upload documents</label>
                                 <input className="form-control p-0 m-0" type="file" id="formFileMultiple" multiple />
-                            </div> */}
+                            </div>
                             <button type="submit" className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>SUBMIT</span></button>
 
                         </div>

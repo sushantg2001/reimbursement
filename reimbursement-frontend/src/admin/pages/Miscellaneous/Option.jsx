@@ -67,7 +67,7 @@ function Option(props) {
 
 
             {
-                  (props.data === "Student" || props.data === "Club") ?
+                  (props.data === "Personal" || props.data === "Club") ?
                         (<li> {props.data} </li>) :
                         (<li>{props.data}
                               <a>
