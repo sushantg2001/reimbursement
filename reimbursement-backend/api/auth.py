@@ -25,12 +25,14 @@ from rest_framework.status import HTTP_200_OK
 
 from .models import APPROVED, Type, TypeRequest, User
 
-student = Type.objects.get_or_create(pk="Student")
+student, _ = Type.objects.get_or_create(pk="Student")
 
 class login(ObtainAuthToken):
     def post(self, request, *args, **kwargs):
         username = request.data.get("username")
         password = request.data.get("password")
+        print(username)
+        print(password)
         r = requests.post(
             settings.AUTH_URL, data={"username": username, "password": password}
         )
@@ -38,7 +40,7 @@ class login(ObtainAuthToken):
         if r.status_code == 200:
             userData = r.json()["user"]
             print(settings.DEBUG)
-            if settings.DEBUG or userData["is_verified"]:
+            if not settings.DEBUG and not userData["is_verified"]:
                 raise exceptions.AuthenticationFailed("User not verified")
             first_name = userData["first_name"]
             last_name = userData["last_name"]

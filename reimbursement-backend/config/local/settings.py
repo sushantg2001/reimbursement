@@ -97,6 +97,6 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 # Parameters for app use
 AUTH_URL = "http://localhost:8001/token-auth/"
-APP_URL = "localhost:8002/"
+APP_URL = "http://localhost:8002/"
 ADMIN_URL = "localhost:8002/admin"
 CURRENT_USER_URL = "http://auth.osa.iiitd.edu.in/core/current_user/"
