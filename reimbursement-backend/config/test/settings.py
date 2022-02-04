@@ -3,7 +3,6 @@ from pathlib import Path
 import os
 from .apps import *
 import dj_database_url
-
 load_dotenv()
 
 print("test deployment")
@@ -18,7 +17,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
 ]
