@@ -8,3 +8,15 @@ Content-Type: application/json
     "username":"admin",
     "password":"{{pass}}"
 }
+
+
+
+###
+POST {{auth_url}}/token-auth/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"{{pass}}"
+}
+https://reimbursement-auth.herokuapp.com/token-auth/

@@ -103,7 +103,6 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 
 # Parameters for app use
-AUTH_URL = "https://reimbersment-auth.herokuapp.com/token-auth/"
-# CURRENT_USER_URL = 'https://reimbersment-auth.herokuapp.com/current_user/'
-APP_URL = "https://reimbersment-auth.herokuapp.com/"
+AUTH_URL = "https://reimbursement-auth.herokuapp.com/token-auth/"
+APP_URL = "https://reimbursement-app.herokuapp.com/api/"
 ADMIN_URL = "https://reimbersment-auth.herokuapp.com/admin"
