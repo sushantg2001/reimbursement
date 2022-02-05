@@ -213,7 +213,7 @@ function Table() {
                         Header: () => null,
                         id: 'approve', // 'id' is required
                         Cell: ({ row }) => (
-                              (row.status === 'Approved') ? <></> :
+                              (row.original.status === 'Approved') ? <></> :
                                     <button onClick={() => approveRequest(row)} className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#4CAF50", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>APPROVE</span>
                                           <Toaster position="top-right"
                                                 reverseOrder={true} /></button>
@@ -223,7 +223,7 @@ function Table() {
                         Header: () => null,
                         id: 'reject', // 'id' is required
                         Cell: ({ row }) => (
-                              (row.status === 'Rejected') ? <></> :
+                              (row.original.status === 'Rejected') ? <></> :
                                     <button onClick={() => rejectRequest(row)} className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#d9534f", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>REJECT</span>
                                           <Toaster position="top-right"
                                                 reverseOrder={true} /></button>

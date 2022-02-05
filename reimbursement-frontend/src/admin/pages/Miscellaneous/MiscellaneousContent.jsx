@@ -177,123 +177,115 @@ function MiscellaneousContent() {
             <Toaster position="top-right"
                 reverseOrder={true} />
 
-            <div className="container  homeContainer mb-3 pb-0   ">
-                <h4 className="pt-4">
+            <div className="container pl-5 pr-5 homeContainer mb-3 pb-0">
+                <h4 className="pt-4 pb-2">
                     Miscellaneous
                 </h4>
+                <div className="card m-auto shadow">
+                    <div className="card-body">
+                        <h5 className="homePageContent pt-1" style={{ textDecoration: "underline" }}>Add Options</h5>
+                        <p className="p-0 m-0">Current Options: </p>
+                        {options.map((option, index) => {
+                            return <Option data={option.data} key={index} />
+                        })}
 
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <h5 className="homePageContent pt-1" style={{ textDecoration: "underline" }}>Add Options</h5>
+                        <div className="input-group  flex-nowrap mt-3 w-25">
 
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p className="p-0 m-0">Current Options: </p>
-                                {options.map((option, index) => {
-                                    return <Option data={option.data} key={index} />
-                                })}
+                            <form onSubmit={addNewOption}>
+                                <input required className="form-control"
+                                    type="text"
+                                    placeholder="Add option"
+                                    onChange={changeNewOption}
+                                    value={newOption}
+                                    aria-describedby="addon-wrapping"
+                                    style={{ borderRadius: "0px" }}
+                                />
+                                <button type="submit" className="btn reimbBtn btn-lg p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}> + ADD OPTION</span></button>
 
-                                <div className="input-group  flex-nowrap mt-3 w-25">
+                            </form>
 
-                                    <form onSubmit={addNewOption}>
-                                        <input required className="form-control"
-                                            type="text"
-                                            placeholder="Add option"
-                                            onChange={changeNewOption}
-                                            value={newOption}
-                                            aria-describedby="addon-wrapping"
-                                            style={{ borderRadius: "0px" }}
-                                        />
-                                        <button type="submit" className="btn reimbBtn btn-lg p-0 pt-1 pb-1 pl-4 pr-4 mt-2" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}> + ADD OPTION</span></button>
 
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <h5 className="homePageContent pt-1" style={{ textDecoration: "underline" }}>Add Clubs</h5>
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <form onSubmit={handleSubmit} >
-                                    <div className="row">
-                                        <div className="col-md-6 col-sm-12">
-                                            <label htmlFor="clubName" className="formStyle m-0">Name*</label>
-                                            <input required type="text" className="form-control mb-2" name="clubName" onChange={changeClubName} value={clubName} />
-                                            <label htmlFor="clubBudget" className="formStyle m-0">Budget*</label>
-                                            <input required type="number" className="form-control mb-2" name="clubBudget" onChange={changeClubBudget} value={clubBudget} />
 
-                                        </div>
-                                        <div className="col-md-6 col-sm-12">
-                                            <label htmlFor="clubDescription" className="form-label formStyle m-0">Description*</label>
-                                            <textarea className="form-control mb-2" id="exampleFormControlTextarea1"
-                                                required
-                                                rows={expand ? "4" : "1"}
-                                                style={{ resize: "none" }}
-                                                placeholder="Enter club details"
-                                                onClick={handleExpand}
-                                                name="clubDescription"
-                                                onChange={changeClubDescription}
-                                                value={clubDescription}
-                                            >
 
-                                            </textarea>
-                                            <button type="submit" className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>+ ADD CLUB</span></button>
-                                        </div>
-                                    </div>
-                                </form>                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <h5 className="homePageContent pt-1" style={{ textDecoration: "underline" }}>Edit Clubs</h5>
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div className="input-group  flex-nowrap mb-2 mt-3 w-25">
-
-                                    <input className="form-control"
-                                        type="text"
-                                        placeholder="Search Clubs"
-                                        onChange={(e) => setSearch(e.target.value)}
-                                        aria-describedby="addon-wrapping"
-                                        style={{ borderRadius: "0px" }}
-                                    />
-
-                                    <span className="input-group-text" id="addon-wrapping" style={{ borderRadius: "0px", color: "#fff", backgroundColor: "#3FADA8" }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                    </svg>
-                                    </span>
-                                </div>
-                                <div className="row mt-3 mb-5">
-                                    {
-                                        filteredClubs.map((record, index) => {
-                                            return (
-                                                <Card
-                                                    key={index}
-                                                    description={record.description}
-                                                    name={record.name}
-                                                    budget={record.budget}
-                                                    id={record.id}
-                                                />
-                                            );
-                                        })
-                                    }
-                                </div>                            </div>
                         </div>
                     </div>
                 </div>
 
+                        <br>
+
+                        </br>
+                <div className="card m-auto shadow">
+                    <div className="card-body">
+                        <h5 className="homePageContent pt-1" style={{ textDecoration: "underline" }}>Add Clubs</h5>
+                        <form onSubmit={handleSubmit} >
+                            <div className="row">
+                                <div className="col-md-6 col-sm-12">
+                                    <label htmlFor="clubName" className="formStyle m-0">Name*</label>
+                                    <input required type="text" className="form-control mb-2" name="clubName" onChange={changeClubName} value={clubName} />
+                                    <label htmlFor="clubBudget" className="formStyle m-0">Budget*</label>
+                                    <input required type="number" className="form-control mb-2" name="clubBudget" onChange={changeClubBudget} value={clubBudget} />
+
+                                </div>
+                                <div className="col-md-6 col-sm-12">
+                                    <label htmlFor="clubDescription" className="form-label formStyle m-0">Description*</label>
+                                    <textarea className="form-control mb-2" id="exampleFormControlTextarea1"
+                                        required
+                                        rows={expand ? "4" : "1"}
+                                        style={{ resize: "none" }}
+                                        placeholder="Enter club details"
+                                        onClick={handleExpand}
+                                        name="clubDescription"
+                                        onChange={changeClubDescription}
+                                        value={clubDescription}
+                                    >
+
+                                    </textarea>
+                                    <button type="submit" className="btn reimbBtn pull-right btn-lg p-0 pt-1 pb-1 pl-4 pr-4" style={{ backgroundColor: "#3FADA8", borderRadius: "30px" }}><span className="fw-700 white" style={{ fontSize: "80%" }}>+ ADD CLUB</span></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+<br></br>
+                <div className="card m-auto shadow">
+                    <div className="card-body">
+                        <h5 className="homePageContent pt-1" style={{ textDecoration: "underline" }}>Edit Clubs</h5>
+                        <div className="input-group  flex-nowrap mb-2 mt-3 w-25">
+
+                            <input className="form-control"
+                                type="text"
+                                placeholder="Search Clubs"
+                                onChange={(e) => setSearch(e.target.value)}
+                                aria-describedby="addon-wrapping"
+                                style={{ borderRadius: "0px" }}
+                            />
+
+                            <span className="input-group-text" id="addon-wrapping" style={{ borderRadius: "0px", color: "#fff", backgroundColor: "#3FADA8" }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                            </span>
+                        </div>
+                        <div className="row mt-3 mb-5">
+                            {
+                                filteredClubs.map((record, index) => {
+                                    return (
+                                        <Card
+                                            key={index}
+                                            description={record.description}
+                                            name={record.name}
+                                            budget={record.budget}
+                                            id={record.id}
+                                        />
+                                    );
+                                })
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                <br></br>
 
 
             </div>

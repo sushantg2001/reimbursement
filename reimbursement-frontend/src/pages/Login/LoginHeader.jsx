@@ -84,7 +84,7 @@ function LoginHeader() {
         formdata.append("password", password);
 
         let reqOptions = {
-            url: "login/",
+            url: "/login/",
             method: "POST",
             headers: headersList,
             data: formdata,
