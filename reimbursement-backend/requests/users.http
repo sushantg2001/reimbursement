@@ -19,4 +19,3 @@ Content-Type: application/json
     "username":"admin",
     "password":"{{pass}}"
 }
-https://reimbursement-auth.herokuapp.com/token-auth/
